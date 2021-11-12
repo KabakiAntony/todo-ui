@@ -1,5 +1,7 @@
 # todo-ui
 
+[![Build Status](https://app.travis-ci.com/KabakiAntony/todo-ui.svg?branch=develop)](https://app.travis-ci.com/KabakiAntony/todo-ui)
+
 ## what is todos
 This is the frontend for the todos app it will be hosted on gh-pages but you can optionally find 
 the backend [here](https://github.com/KabakiAntony/todos/tree/develop)
