@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <h1>Will be the welcome page</h1>
+    <h1>This is the best todos app on the internet</h1>
+    <div id="nav">
+      <router-link to="/">Register</router-link> | 
+      <router-link to="/">Login</router-link>
+    </div>
   </div>
 </template>
 
