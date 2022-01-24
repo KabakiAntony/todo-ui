@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "coveralls": "^3.1.1",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
@@ -38,6 +39,15 @@
     "preset": "@vue/cli-plugin-unit-jest",
     "transform": {
       "^.+\\.vue$": "vue-jest"
-    }
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,vue}",
+      "!**/node_modules/**"
+    ],
+    "coverageReporters": [
+      "html",
+      "text-summary"
+    ]
   }
 }
