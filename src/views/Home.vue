@@ -1,18 +1,18 @@
 <template>
   <div class="home">
     <img alt="Todos UI Logo" src="../assets/images/undraw_welcome_cats_thqn.svg">
-    <HelloWorld msg="Welcomes to Todos universe"/>
+    <TodoIndex msg="Ain't this the best todo app on the internet."/>
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import TodoIndex from '@/components/TodoIndex.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    TodoIndex
   }
 }
 </script>

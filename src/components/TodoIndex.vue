@@ -1,23 +1,19 @@
 <template>
   <div class="hello">
-    <h1>This is the best todos app on the internet</h1>
-    <div id="nav">
-      <router-link to="/">Register</router-link> | 
-      <router-link to="/">Login</router-link>
-    </div>
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'TodoIndex',
   props: {
     msg: String
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+
 <style scoped>
 h3 {
   margin: 40px 0 0;
