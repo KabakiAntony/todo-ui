@@ -42,11 +42,11 @@
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "src/**/*.{js,vue}",
-      "!**/node_modules/**"
+      "**/*.{vue}", "**/node_modules/**","!<rootDir>/dist/**",
+      "<rootDir>/src/plugins/**"
     ],
     "coverageReporters": [
-      "html",
+      "lcov",
       "text-summary"
     ]
   }
