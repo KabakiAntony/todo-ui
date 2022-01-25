@@ -46,7 +46,7 @@
       "!**/node_modules/**"
     ],
     "coverageReporters": [
-      "html",
+      "lcov",
       "text-summary"
     ]
   }
