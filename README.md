@@ -1,6 +1,6 @@
 # todo-ui
 
-[![Build Status](https://app.travis-ci.com/KabakiAntony/todo-ui.svg?branch=develop)](https://app.travis-ci.com/KabakiAntony/todo-ui)
+[![Build Status](https://app.travis-ci.com/KabakiAntony/todo-ui.svg?branch=develop)](https://app.travis-ci.com/KabakiAntony/todo-ui) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/todo-ui/badge.svg)](https://coveralls.io/github/KabakiAntony/todo-ui)
 
 ## what is todos
 This is the frontend for the todos app it will be hosted on gh-pages but you can optionally find 
