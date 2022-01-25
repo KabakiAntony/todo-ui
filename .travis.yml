@@ -9,9 +9,12 @@ cache:
 
 script: npm run test:unit
 
+after_script:
+- cat ./coverage/lcov.info | coveralls
+
 after_success:
 - npm run build
-- cat ./coverage/lcov.info | coveralls
+
 
 deploy:
  provider: pages
