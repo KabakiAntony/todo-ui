@@ -7,8 +7,9 @@
 </template>
 
 <style>
+*{box-sizing: border-box;}
 #app {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -26,11 +27,13 @@
   color: #3F3D56;
   text-decoration: none;
 }
-#nav a:hover{
-  color:aqua;
-}
 
 #nav a.router-link-exact-active {
   color: #ffffff;
+}
+
+#nav a:hover{
+  color:rgb(38, 252, 31);
+  font-weight: normal;
 }
 </style>

@@ -7,6 +7,7 @@ describe('TodoIndex.vue', () => {
     const wrapper = shallowMount(TodoIndex, {
       props: { msg  }
     })
+    expect(wrapper.vm.$options.name).toMatch('TodoIndex')
     expect(wrapper.text()).toMatch(msg)
   })
 })
