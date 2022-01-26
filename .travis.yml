@@ -9,12 +9,11 @@ cache:
 
 script: npm run test:unit
 
-# after_script:
-# - coveralls
+after_script:
+- npm install coveralls@3 && npm run specs && coveralls < coverage/lcov.info
 
 after_success:
 - npm run build
-- npm run coveralls
 
 
 deploy:
