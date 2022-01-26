@@ -12,7 +12,7 @@ script:
 - npm run test:unit
 
 after_script:
-- npm run coveralls < coverage/lcov.info
+- npm run coveralls
 
 after_success:
 - npm run build
