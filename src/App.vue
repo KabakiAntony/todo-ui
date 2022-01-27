@@ -1,6 +1,6 @@
 <template>
   <div id="nav">
-      <router-link to="/">Sign Up</router-link> | 
+      <router-link :to="{ name: 'Sign Up' }">Sign Up</router-link> | 
       <router-link to="/">Login</router-link>
   </div>
   <router-view/>
@@ -14,6 +14,8 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #3F3D56;
+  width: 100%;
+  position: relative;
 }
 
 #nav {
@@ -24,16 +26,16 @@
 
 #nav a {
   font-weight: bold;
-  color: #3F3D56;
+  color: #ffffff;
   text-decoration: none;
 }
 
 #nav a.router-link-exact-active {
-  color: #ffffff;
+  color: #FF6584;
 }
 
 #nav a:hover{
-  color:rgb(38, 252, 31);
+  color:#FF6584;
   font-weight: normal;
 }
 </style>
