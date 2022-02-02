@@ -3,8 +3,7 @@
 [![Build Status](https://app.travis-ci.com/KabakiAntony/todo-ui.svg?branch=develop)](https://app.travis-ci.com/KabakiAntony/todo-ui) [![Coverage Status](https://coveralls.io/repos/github/KabakiAntony/todo-ui/badge.svg)](https://coveralls.io/github/KabakiAntony/todo-ui)
 
 ## Overview
-This is an app for managing todos, It is hosted on gh-pages and it will be talking to a backend that
-is resident [here](https://github.com/KabakiAntony/todos/tree/develop)
+This is an app for managing todos, It is [here](https://kabakiantony.github.io/todo-ui/#/) on gh-pages and it will be talking to a backend that is resident [here](https://ka-todos.herokuapp.com/) and the github repository for the same is [here](https://github.com/KabakiAntony/todos/tree/develop)
 
 ### Features that will be available
 
