@@ -11,10 +11,10 @@
                 {{ button_text }}
                 </button>
             </div>
-            <!-- <div class="text-center">
+            <div class="text-center">
                 Already have an account?
                 <router-link id="bottom-sign-in" :to="{ name: 'Login' }">Login</router-link>
-            </div> -->
+            </div>
         </form>
     </div>
 </template>
@@ -107,8 +107,7 @@ input{
   }
   .text-center a:hover{
       color:#3F3D56;
-      text-decoration: underline;
-      text-transform: uppercase;
+      text-decoration: underline; 
   }
   label {
     display: inline-block;
