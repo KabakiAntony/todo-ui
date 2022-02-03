@@ -1,13 +1,15 @@
 <template>
+<div>
   <div id="nav">
       <router-link :to="{ name: 'Home' }">Home</router-link> |
-      <router-link :to="{ name: 'Sign Up' }">Sign Up</router-link> | 
-      <router-link :to="{name: 'Login' }">Login</router-link>
+      <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> | 
+      <router-link :to="{name: 'SignIn' }">Sign In</router-link>
   </div>
   <router-view/>
   <div id="footer">
     <p>&copy; Todo App 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">find developer here.</a></p>
   </div>
+</div>
 </template>
 
 <style>
