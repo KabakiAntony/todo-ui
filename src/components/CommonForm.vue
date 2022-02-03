@@ -1,6 +1,6 @@
 <template>
     <div id="form-container">
-        <h2 class="form-header">Login</h2>
+        <h2 class="form-header">{{ header }}</h2>
         <form @submit.prevent="handleSubmit">
             <label>Email</label>
             <input type="email" v-model="form.email" required>
@@ -8,12 +8,12 @@
             <input type="password" v-model="form.password" required>
             <div>
                 <button type="submit" class="submit" :class="action">
-                {{ button_text }}
+                {{ submit_text }}
                 </button>
             </div>
             <div class="text-center">
-                Forgot password ?
-                <router-link id="bottom-sign-in" :to="{ name: 'Login' }">reset here</router-link>
+                {{ bottom_text }}
+                <router-link id="form-bottom" :to="{ name:route_name }" >{{ bottom_link_text }}</router-link>
             </div>
         </form>
     </div>
@@ -21,14 +21,20 @@
 
 <script>
 export default {
-    name:'LoginForm',
+    name:'CommonForm',
+    props:{
+        header: String,
+        submit_text: String,
+        bottom_text: String,
+        bottom_link_text: String,
+        route_name: String,
+    },
     data(){
         return{
             form:{
                 email:'',
                 password:''
             },
-            button_text:'Login',
             action:''
         }
     },
@@ -43,7 +49,6 @@ export default {
 
 <style scoped>
 #form-container{
-    /* margin-left:50%; */
     margin: 0 auto;
     background:#89898E;
     border-radius:0.5rem;

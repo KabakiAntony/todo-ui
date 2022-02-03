@@ -1,14 +1,15 @@
 import { shallowMount } from '@vue/test-utils'
-import SignupForm from '@/components/SignupForm.vue'
+import CommonForm from '@/components/CommonForm.vue'
 
-describe('SignupForm.vue', () => {
+describe('CommonForm.vue', () => {
   it('tests we are getting the right component by name', () => {
-    const wrapper = shallowMount(SignupForm)
-    expect(wrapper.vm.$options.name).toMatch('SignupForm')
+    const wrapper = shallowMount(CommonForm)
+    
+    expect(wrapper.vm.$options.name).toMatch('CommonForm')
   })
 
   it('test setting values on inputs',async ()=>{
-      const wrapper = shallowMount(SignupForm)
+      const wrapper = shallowMount(CommonForm)
 
       const email = "email@example.com"
       const password = "password123"
@@ -24,7 +25,7 @@ describe('SignupForm.vue', () => {
   })
 
   it('test submitting the form', async () => {
-    const wrapper = shallowMount(SignupForm)
+    const wrapper = shallowMount(CommonForm)
 
     const email = "email@example.com"
     const password = "password123"

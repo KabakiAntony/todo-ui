@@ -1,14 +1,16 @@
 <template>
- <h1>Sign up with this awesome app &#x263A;</h1>
- <SignupForm/>
+<div class="signup-page">
+  <h1>Sign up with this awesome app &#x263A;</h1>
+  <CommonForm  header="Sign Up" submit_text="Sign me up" bottom_text="Already have an account ?" bottom_link_text="Sign In" route_name="SignIn"/>
+</div>
 </template>
 
 <script>
-import SignupForm from '../components/SignupForm.vue'
+import CommonForm from "@/components/CommonForm.vue"
 
 export default {
   name: 'Signup',
-  components: { SignupForm }
+  components : { CommonForm }
 }
 </script>
 
