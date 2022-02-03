@@ -6,7 +6,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import TodoIndex from '@/components/TodoIndex.vue'
 
 export default {
