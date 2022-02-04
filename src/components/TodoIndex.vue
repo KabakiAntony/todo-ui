@@ -1,5 +1,6 @@
 <template>
-  <div class="hello">
+  <div class="todo-index">
+    <img alt="Todos UI Logo" src="../assets/images/undraw_welcome_cats_thqn.svg">
     <h1>{{ msg }}</h1>
   </div>
 </template>
@@ -15,5 +16,9 @@ export default {
 
 
 <style scoped>
-/* styles for this component*/
+ img {
+    margin-top: 5%;
+    height: 35%;
+    width: 70%;
+  }
 </style>
