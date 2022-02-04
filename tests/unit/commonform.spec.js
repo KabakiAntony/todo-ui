@@ -1,4 +1,4 @@
-import { shallowMount } from '@vue/test-utils'
+import { shallowMount, mount } from '@vue/test-utils'
 import CommonForm from '@/components/CommonForm.vue'
 
 describe('CommonForm.vue', () => {
@@ -35,6 +35,36 @@ describe('CommonForm.vue', () => {
     await wrapper.find('form').trigger('submit.prevent')
 
     expect(wrapper.emitted('submit')[0][0]).toStrictEqual({email,password})
+  })
+  it('test that props render when passed', ()=>{
+    const wrapper = mount(CommonForm,{
+      global: { stubs: ['CommonForm']}
+    })
+    
+    const foo = wrapper.getComponent({name:'CommonForm'})
+
+    expect(foo.props('header')).toEqual(undefined)
+    expect(foo.props('submit_text')).toEqual(undefined)
+    expect(foo.props('bottom_text')).toEqual(undefined)
+    expect(foo.props('bottom_link_text')).toEqual(undefined)
+    expect(foo.props(' route_name')).toEqual(undefined)
+  })
+  it('test setting props', async () =>{
+    const wrapper = mount(CommonForm, {
+      props:{
+        header:'form header 1',
+        // submit_text:'submit text 1',
+        // bottom_text:'bottom text 1',
+        // bottom_link_text:'bottom link text 1',
+        // route_name:'route name 1'
+      }
+    })
+
+    expect(wrapper.html()).toContain('form header 1')
+    
+    await wrapper.setProps({ header: 'form header 2' })
+
+    expect(wrapper.html()).toContain('form header 2')
   })
   
 })
