@@ -28,6 +28,12 @@ const routes = [
     name: "Update",
     component: ()=> import(/* webpackChunkName: "about" */ '../views/Update.vue'),
     props:true
+  },
+  {
+    path: '/forgot',
+    name: "Forgot",
+    component: ()=> import(/* webpackChunkName: "about" */ '../views/Forgot.vue'),
+    props:true
   }
 ]
 

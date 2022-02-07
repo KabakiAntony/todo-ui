@@ -1,8 +1,8 @@
 <template>
-  <div class="signin-page">
+  <div class="page">
     <h1>Want to see awesomeness login down here it's so simple</h1>
      <img alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
-    <CommonForm  header="Sign In" submit_text="Sign In" bottom_text="Forgot password ?" bottom_link_text="Reset" route_name="Home"/>
+    <CommonForm  header="Sign In" submit_text="Sign In" bottom_text="Forgot password ?" bottom_link_text="Send link" route_name="Forgot"/>
   </div>
 </template>
 
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.signin-page{
+.page{
     width: 90%;
     margin: 0 auto;
     margin-top:5%;

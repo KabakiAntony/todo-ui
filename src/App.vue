@@ -74,4 +74,77 @@ html,body{
   color:#00ff4c;
   text-decoration: underline;
 }
+#form-container{
+    margin: 0 auto;
+    background:#89898E;
+    border-radius:0.5rem;
+    max-width: 320px;
+    font-size: small;
+    font-weight: 500;
+    overflow: hidden;
+    color:rgb(87, 86, 86);
+    text-align: justify;
+}
+form{
+    padding:30px;
+}
+.form-header{
+    text-align:center;
+    background-color: #3F3D56;
+    padding: 10px;
+    margin:0;
+    font-weight: bold;
+    font-size: 120%;
+    color: rgba(255,255,255);
+}
+input{
+    display: block;
+    margin-bottom: 10px;
+    padding:10px;
+    width:100%;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    border:1px solid  rgb(51, 49, 49);
+}
+  button:hover{
+    background-color: white;
+    color: #3F3D56;
+    cursor: pointer;
+  }
+  .submit{
+    font-family: 'Indie Flower', cursive;
+    font-weight: bold;
+    background-color: #3F3D56;
+    border-radius:0.5rem;
+    border:none;
+    text-decoration: none;
+    padding: 10px;
+    color:rgb(255, 255, 255);
+    width:100%;
+    font-size: 110%;
+    margin-top: 10px;
+  }
+  .text-center{
+    text-align: center;
+    margin-top: inherit;
+    font-size: 12px;
+    margin-top:20px;
+    font-weight: bold;
+     color:#000000;
+  }
+  .text-center a{
+    text-decoration:none;
+    color:#00ff4c;
+  }
+  .text-center a:hover{
+      color:#3F3D56;
+      text-decoration: underline; 
+  }
+  label {
+    display: inline-block;
+    margin: 5px 0 5px;
+    color:rgb(0, 0, 0);
+    font-family:cursive;
+    font-weight: bold;
+}
 </style>
