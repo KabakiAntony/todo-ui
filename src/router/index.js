@@ -34,6 +34,12 @@ const routes = [
     name: "Forgot",
     component: ()=> import(/* webpackChunkName: "about" */ '../views/Forgot.vue'),
     props:true
+  },
+  {
+    path: '/dashboard',
+    name: "Dashboard",
+    component: ()=> import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),
+    props:true
   }
 ]
 
