@@ -44,9 +44,7 @@ const routes = [
 ]
 
 const router = createRouter({
-  // history: createWebHashHistory(),
-  // routes: [{ path: '/:pathMatch(.*)', component: NotFoundComponent }],
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   routes
 })
 
