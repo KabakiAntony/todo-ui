@@ -144,7 +144,7 @@ input{
     display: inline-block;
     margin: 5px 0 5px;
     color:rgb(0, 0, 0);
-    font-family:cursive;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 </style>
