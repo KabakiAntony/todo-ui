@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <Spinner />
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
@@ -13,16 +14,18 @@
 <script>
 import ForgotForm from "@/components/ForgotForm.vue"
 import ShowAlert from "@/components/ShowAlert.vue"
+import Spinner from '@/components/Spinner.vue'
 
 
 export default {
     name:'Forgot',
-    components : { ShowAlert, ForgotForm },
+    components : { ShowAlert, ForgotForm, Spinner },
     data(){
       return{
         type: null,
         message:null,
         show:false,
+        action:null,
       }
     },
 
