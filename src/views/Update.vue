@@ -1,5 +1,6 @@
 <template>
   <div class="signin-page">
+    <Spinner />
     <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
@@ -11,15 +12,17 @@
 <script>
 import CommonForm from "@/components/CommonForm.vue"
 import ShowAlert  from "@/components/ShowAlert.vue"
+import Spinner from "@/components/Spinner.vue"
 
 export default {
     name:'Update',
-    components : { ShowAlert, CommonForm },
+    components : { ShowAlert, CommonForm, Spinner },
      data(){
     return {
       type:null,
       message:null,
-      show:false
+      show:false,
+      action:null,
     }
   }
 
