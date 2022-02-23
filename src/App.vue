@@ -187,8 +187,4 @@ input{
       transform: scale(1.0);
     }
   }
-  .submitting{
-    background-color: #89898E;
-    font-weight: bold;
-  }
 </style>
