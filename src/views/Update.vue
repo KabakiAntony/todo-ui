@@ -5,7 +5,7 @@
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
     <h1>Set a new password here.</h1>
-    <CommonForm  header="Enter email" submit_text="Update"/>
+    <CommonForm   v-bind="commonFormProps" :class="action" />
   </div>
 </template>
 
@@ -19,6 +19,10 @@ export default {
     components : { ShowAlert, CommonForm, Spinner },
      data(){
     return {
+      commonFormProps:{
+        header:"Enter email",
+        submit_text:"Update",
+      },
       type:null,
       message:null,
       show:false,

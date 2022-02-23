@@ -34,7 +34,7 @@ describe('CommonForm.vue', () => {
     await wrapper.find('input[type=password]').setValue(password)
     await wrapper.find('form').trigger('submit.prevent')
 
-    expect(wrapper.emitted('submit')[0][0]).toStrictEqual({email,password})
+    expect(wrapper.emitted('on-submit')[0][0]).toStrictEqual({email,password})
   })
   it('test that props render when passed', ()=>{
     const wrapper = mount(CommonForm,{
@@ -53,10 +53,6 @@ describe('CommonForm.vue', () => {
     const wrapper = mount(CommonForm, {
       props:{
         header:'form header 1',
-        // submit_text:'submit text 1',
-        // bottom_text:'bottom text 1',
-        // bottom_link_text:'bottom link text 1',
-        // route_name:'route name 1'
       }
     })
 

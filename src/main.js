@@ -7,7 +7,7 @@ import store from './store'
 const app = createApp(App)
 app.use(store).use(router).mount("#app");
 
-// app.config.globalProperties.$api = "http://127.0.0.1:5000/"
-// store.$api = "http://127.0.0.1:5000/"
-app.config.globalProperties.$api = "https://ka-todos.herokuapp.com/"
-store.$api = "https://ka-todos.herokuapp.com/"
+app.config.globalProperties.$api = "http://127.0.0.1:5000/"
+store.$api = "http://127.0.0.1:5000/"
+// app.config.globalProperties.$api = "https://ka-todos.herokuapp.com/"
+// store.$api = "https://ka-todos.herokuapp.com/"
