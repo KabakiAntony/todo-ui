@@ -6,7 +6,7 @@
     </transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
      <img alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
-    <CommonForm  header="Sign In" submit_text="Sign In" bottom_text="Forgot password ?" bottom_link_text="Send link" route_name="Forgot"/>
+    <CommonForm  v-bind="commonFormProps" :class="action"/>
   </div>
 </template>
 
@@ -21,10 +21,17 @@ export default {
     components : { CommonForm, ShowAlert, Spinner },
      data(){
       return {
-        type:null,
-        message:null,
-        show:false,
-        action:null,
+        commonFormProps:{
+        header:"Sign In",
+        submit_text:"Sign me in",
+        bottom_text:"Forgot Password ?",
+        bottom_link_text:"Send link",
+        route_name:"Forgot"
+      },
+      type:null,
+      message:null,
+      show:false,
+      action:null,
       }
   }
 
