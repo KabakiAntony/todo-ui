@@ -28,7 +28,6 @@ export default {
         margin-bottom: 50px;
     }
    input[type=button]{
-        font-weight: bold;
         background-color: #3F3D56;
         border-radius:0.5rem;
         border:none;
@@ -39,7 +38,6 @@ export default {
         width:20%;
         text-align: center;
         display: inline-block;
-        font-family: 'Indie Flower', cursive;
         margin-left:5%;
     }
    input[type=button]:hover{

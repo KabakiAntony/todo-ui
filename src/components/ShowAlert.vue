@@ -32,7 +32,6 @@ export default {
   left: 20%;
   font-size:80%;
   font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   position: fixed;
 }
 .toast-enter-from{

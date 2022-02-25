@@ -7,7 +7,7 @@
   </div>
   <router-view/>
   <div id="footer">
-    <p>&copy; Todo App 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">find developer here.</a></p>
+    <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">find the developer here.</a></p>
   </div>
 </div>
 </template>
@@ -18,13 +18,12 @@ html,body{
   margin:0;
   padding:0;
   font-size: 100%;
-  font-weight: 400;
   color: #212529;
   text-align: left;
   height: 100%;
 }
 #app {
-  font-family: 'Indie Flower', cursive;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -43,6 +42,7 @@ html,body{
   font-weight: bold;
   color: #ffffff;
   text-decoration: none;
+  text-transform: uppercase;
 }
 
 #nav a.router-link-exact-active {
@@ -112,7 +112,6 @@ input{
     cursor: pointer;
   }
   .submit{
-    font-family: 'Indie Flower', cursive;
     font-weight: bold;
     background-color: #3F3D56;
     border-radius:0.5rem;
@@ -144,7 +143,6 @@ input{
     display: inline-block;
     margin: 5px 0 5px;
     color:rgb(0, 0, 0);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-weight: bold;
 }
 .spinner {

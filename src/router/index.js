@@ -41,7 +41,13 @@ const routes = [
     name: "Dashboard",
     component: ()=> import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),
     meta: {requiresAuth: true},
-  }
+  },
+  {
+    path: '/verify',
+    name: "Verify",
+    component: ()=> import(/* webpackChunkName: "about" */ '../views/Verify.vue'),
+    props: route => ({ query: route.query.tkn })
+  },
 ]
 
 const router = createRouter({
