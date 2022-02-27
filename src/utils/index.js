@@ -10,7 +10,7 @@ export function loadSpinner(){
     setTimeout(()=>{
           this.type = null
           this.message = null
-        }, 4000)
+        }, 6000)
   }
   export function loadToast(msg, toast_type){
     this.show = true
