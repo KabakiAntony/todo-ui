@@ -1,13 +1,13 @@
 <template>
   <div class="page">
-    <Spinner />
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
     <h1>forgot your password ?</h1>
     <p>relax we got you, just enter your email below and we will send you a link shortly.</p>
     <img alt="forgot password" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
-    <ForgotForm class="forgot" />
+    <ForgotForm class="forgot" @on-submit="handleSubmit"/>
+    <Spinner />
   </div>
 </template>
 
@@ -15,7 +15,7 @@
 import ForgotForm from "@/components/ForgotForm.vue"
 import ShowAlert from "@/components/ShowAlert.vue"
 import Spinner from '@/components/Spinner.vue'
-
+import { unloadToast, loadToast, loadSpinner, unloadSpinner } from "../utils"
 
 export default {
     name:'Forgot',
@@ -28,7 +28,36 @@ export default {
         action:null,
       }
     },
-
+    methods:{
+    loadSpinner,
+    unloadSpinner,
+    unloadToast,
+    loadToast,
+     async handleSubmit(theForm){
+            this.loadSpinner()
+            const url = `${this.$api}users/forgot`
+            const res = await fetch(url,{
+                method:'POST',
+                headers:{
+                    'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(theForm)
+                    })
+            const data = await res.json()
+            if(data.status === 202){
+                this.unloadSpinner()
+                this.loadToast(data.data.message, "success")
+                this.unloadToast()
+                setTimeout(()=>{
+                this.$router.push({name: 'Home'})
+                },4000)
+            } else {
+              this.unloadSpinner()
+              this.loadToast(data.error, "error")
+              this.unloadToast()
+              }
+        },
+  }
 }
 </script>
 
