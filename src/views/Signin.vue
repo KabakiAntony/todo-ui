@@ -1,12 +1,12 @@
 <template>
   <div class="page">
-    <Spinner />
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
      <img alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
-    <CommonForm  v-bind="commonFormProps" :class="action"/>
+    <CommonForm  v-bind="commonFormProps" @on-submit="handleSubmit"/>
+    <Spinner />
   </div>
 </template>
 
@@ -14,6 +14,7 @@
 import CommonForm from "@/components/CommonForm.vue"
 import ShowAlert from "@/components/ShowAlert.vue"
 import Spinner from '@/components/Spinner.vue'
+import { unloadToast, loadToast, loadSpinner, unloadSpinner } from "../utils"
 
 
 export default {
@@ -33,6 +34,28 @@ export default {
       show:false,
       action:null,
       }
+  },
+    methods:{
+    loadSpinner,
+    unloadSpinner,
+    unloadToast,
+    loadToast,
+     async handleSubmit(theForm){
+            this.loadSpinner()
+            let data = await this.$store.dispatch('signIn',theForm)
+            if(data.status === 200){
+                this.unloadSpinner()
+                this.loadToast(data.data.message, "success")
+                this.unloadToast()
+                setTimeout(()=>{
+                this.$router.push({name: 'Dashboard'})
+                },3000)
+            } else {
+              this.unloadSpinner()
+              this.loadToast(data.error, "error")
+              this.unloadToast()
+              }
+        },
   }
 
 }
