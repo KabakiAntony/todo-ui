@@ -1,16 +1,50 @@
 <template>
 <div>
-  <div id="nav">
-      <router-link :to="{ name: 'Home' }">Home</router-link> |
-      <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> | 
-      <router-link :to="{name: 'SignIn' }">Sign In</router-link>
-  </div>
+  <ul id="nav">
+    <li class="logo">Todos App</li>
+      <div class="nav-right">
+        <li v-if="isLoggedIn">
+          <a  class="signout" @click="signOut">Sign Out</a>
+        </li>
+        <li v-else>
+          <router-link :to="{ name: 'Home' }">Home</router-link>
+          <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> |
+          <router-link :to="{name: 'SignIn' }">Sign In</router-link>
+        </li>
+      </div>
+    </ul>
   <router-view/>
   <div id="footer">
     <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">find the developer here.</a></p>
   </div>
 </div>
 </template>
+
+<script>
+
+import { mapGetters }  from 'vuex'
+
+export default {
+  methods:{
+    async signOut(){
+      try{
+            this.$store.commit('UPDATE_IS_LOGGED_IN',false)
+            this.$store.commit('UPDATE_AUTH_TOKEN',null)
+            this.$router.push({name:"SignIn"})
+      }
+      catch(err){
+        console.log(err)
+      }
+    
+    }
+  },
+  computed:{
+    ...mapGetters({
+      isLoggedIn:"IsLoggedIn", 
+      }),
+  },  
+}
+</script>
 
 <style>
 *{box-sizing: border-box;}
@@ -34,17 +68,18 @@ html,body{
 }
 
 #nav {
-  padding: 10px;
+  padding: 1em;
   background-color: #3F3D56;
+  height:60px;
+  width: 100%;
 }
-
 #nav a {
-  font-weight: bold;
-  color: #ffffff;
+  float:left;
+  color:white;
+  text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
+  font-weight:bold;
 }
-
 #nav a.router-link-exact-active {
   color: #FF6584;
 }
@@ -52,6 +87,34 @@ html,body{
 #nav a:hover{
   color:#FF6584;
   font-weight: normal;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color:#ffffff;
+}
+.nav-right{
+  float: right;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  float: left;
+}
+li a {
+  padding: 8px;
+}
+#nav .username{
+  font-weight: bold;
+  color:rgb(0, 0, 0);
+  font-size: normal;
+}
+#nav .signout:hover{
+  cursor:pointer;
 }
 #footer {
   position:absolute;
@@ -184,5 +247,8 @@ input{
       -webkit-transform: scale(1.0);
       transform: scale(1.0);
     }
+  }
+  .right-list{
+    float:right
   }
 </style>
