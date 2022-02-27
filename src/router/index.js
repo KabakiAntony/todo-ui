@@ -12,40 +12,37 @@ const routes = [
   {
     path: '/signup',
     name: 'SignUp',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signup.vue'),
+    component: () => import('../views/Signup.vue'),
     props:true
   },
   {
     path: '/signin',
     name: 'SignIn',
-    component: () => import(/* webpackChunkName: "about" */ '../views/Signin.vue'),
+    component: () => import('../views/Signin.vue'),
     props:true
   },
   {
     path: '/update',
     name: "Update",
-    component: ()=> import(/* webpackChunkName: "about" */ '../views/Update.vue'),
-    props:true
+    component: ()=> import('../views/Update.vue'),
+    props: route => ({ query: route.query.tkn })
   },
   {
     path: '/forgot',
     name: "Forgot",
-    component: ()=> import(/* webpackChunkName: "about" */ '../views/Forgot.vue'),
+    component: ()=> import('../views/Forgot.vue'),
     props:true
   },
   {
     path: '/dashboard',
     name: "Dashboard",
-    component: ()=> import(/* webpackChunkName: "about" */ '../views/Dashboard.vue'),
+    component: ()=> import('../views/Dashboard.vue'),
     meta: {requiresAuth: true},
   },
   {
     path: '/verify',
     name: "Verify",
-    component: ()=> import(/* webpackChunkName: "about" */ '../views/Verify.vue'),
+    component: ()=> import('../views/Verify.vue'),
     props: route => ({ query: route.query.tkn })
   },
 ]
