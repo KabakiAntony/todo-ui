@@ -26,7 +26,7 @@ describe('ForgotForm.vue', () => {
     await wrapper.find('input[type=email]').setValue(email)
     await wrapper.find('form').trigger('submit.prevent')
 
-    expect(wrapper.emitted('submit')[0][0]).toStrictEqual({email})
+    expect(wrapper.emitted('on-submit')[0][0]).toStrictEqual({email})
   })
 
 })
