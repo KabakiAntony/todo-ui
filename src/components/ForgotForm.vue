@@ -1,11 +1,11 @@
 <template>
     <div id="form-container">
         <h2 class="form-header">Forgot Password</h2>
-        <form @submit.prevent="handleSubmit">
+        <form @submit.prevent="$emit('on-submit', form)">
             <label>Email</label>
             <input type="email" v-model="form.email" required>
             <div>
-                <button type="submit" class="submit" :class="action">
+                <button type="submit" class="submit">
                 {{ submit_text }}
                 </button>
             </div>
@@ -21,15 +21,8 @@ export default {
             form:{
                 email:'',
             },
-            action:'',
             submit_text:"Send email"
         }
-    },
-    methods:{
-        async handleSubmit(){
-            this.$emit('submit', this.form)
-        }
-
     }
 }
 </script>
