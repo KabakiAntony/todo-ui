@@ -50,7 +50,7 @@ export default {
             const data = await res.json()
             if(data.status === 201){
                 this.unloadSpinner()
-                this.loadToast(data.data, "success")
+                this.loadToast(data.data.message, "success")
                 this.unloadToast()
                 setTimeout(()=>{
                 this.$router.push({name: 'SignIn'})
