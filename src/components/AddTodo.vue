@@ -1,7 +1,10 @@
 <template>
   <div class="add-todo">
-      <input type="text" name="new-todo" >
-      <input type="button" value="Add">
+      <form @submit.prevent="$emit('on-submit', form)">
+          <input type="text" v-model="form.text" required>
+          <button type="submit" class="submit">Add Todo</button>
+      </form>
+      
   </div>
 </template>
 
@@ -10,7 +13,9 @@ export default {
     name:'AddTodo',
     data(){
         return{
-            newTodo:''
+            form:{
+                text:"",
+            }
         }
     }
  
@@ -22,12 +27,12 @@ export default {
         background:#89898E;
         display:inline-block;
         width:70%;
-        padding:4%;
+        padding:1%;
         border-radius:0.5rem;
         border:none;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
-   input[type=button]{
+   .submit{
         background-color: #3F3D56;
         border-radius:0.5rem;
         border:none;
@@ -40,7 +45,7 @@ export default {
         display: inline-block;
         margin-left:5%;
     }
-   input[type=button]:hover{
+   .submit:hover{
         background-color: white;
         color: #3F3D56;
         cursor: pointer;
