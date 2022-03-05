@@ -2,7 +2,7 @@ const state = {
     todos:[]
   };
   const getters = {
-    Files: state => state.files
+    Todos: state => state.todos
   };
   const actions = {
     async getTodos({commit}){
@@ -15,15 +15,20 @@ const state = {
         })
         const data = await res.json()
         if (data.status === 200){
-  
             commit('UPDATE_TODOS',data.data)
+        }
+        else if(data.status === 404){
+          commit('RESET_TODOS')
         }
         return data
    },
   };
   const mutations = {
     UPDATE_TODOS(state,payload){
-      state.files = payload
+      state.todos = payload
+   },
+   RESET_TODOS(state){
+      state.todos.length = 0;
    }
   };
   export default {
