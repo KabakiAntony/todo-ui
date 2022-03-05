@@ -1,10 +1,12 @@
 const state = {
     auth_token:null,
     isLoggedIn :false,
+    screen_name:null,
 };
 const getters = {
     AuthToken: state => state.auth_token,
-    IsLoggedIn: state=> state.isLoggedIn
+    IsLoggedIn: state => state.isLoggedIn,
+    ScreenName: state => state.screen_name,
 };
 const actions = {
   async signIn({commit}, userData){
@@ -20,6 +22,7 @@ const actions = {
         const data = await res.json()
         if (data.status === 200){
             commit('UPDATE_AUTH_TOKEN',data.data.auth_token)
+            commit('UPDATE_SCREEN_NAME', data.data.screen_name)
             commit('UPDATE_IS_LOGGED_IN',true)
         }
         return data
@@ -37,6 +40,9 @@ const mutations = {
  },
  UPDATE_IS_LOGGED_IN(state,payload){
    state.isLoggedIn = payload
+ },
+ UPDATE_SCREEN_NAME(state, payload){
+   state.screen_name = payload
  }
 };
 export default {
