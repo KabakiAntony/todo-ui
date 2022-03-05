@@ -4,6 +4,7 @@
     <li class="logo">Todos App</li>
       <div class="nav-right">
         <li v-if="isLoggedIn">
+          <a href="#" class="screen_name">Hello {{ screen_name }}</a>
           <a  class="signout" @click="signOut">Sign Out</a>
         </li>
         <li v-else>
@@ -30,6 +31,7 @@ export default {
       try{
             this.$store.commit('UPDATE_IS_LOGGED_IN',false)
             this.$store.commit('UPDATE_AUTH_TOKEN',null)
+            this.$store.commit('UPDATE_SCREEN_NAME',null)
             this.$router.push({name:"SignIn"})
       }
       catch(err){
@@ -41,6 +43,7 @@ export default {
   computed:{
     ...mapGetters({
       isLoggedIn:"IsLoggedIn", 
+      screen_name:"ScreenName"
       }),
   },  
 }
@@ -83,7 +86,13 @@ html,body{
 #nav a.router-link-exact-active {
   color: #FF6584;
 }
-
+#nav a.screen_name{
+  color: #FF6584;
+}
+#nav a.screen_name:hover{
+  font-weight: bold;
+  cursor:not-allowed;
+}
 #nav a:hover{
   color:#FF6584;
   font-weight: normal;

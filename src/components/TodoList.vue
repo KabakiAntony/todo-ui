@@ -3,8 +3,13 @@
      <div class="todo-list" v-for="todo in todos" :key="todo.id" data-test="todo">
       <li>{{ todo.text }}</li>
       <div class="action-buttons">
-          <button class="complete">Complete</button>
-          <button class="delete">Delete</button>
+          <button 
+          class="complete" 
+          :class="todo.completed ? 'completed' : 'open'"  
+          @click="$emit('on-update', todo.id, todo), toggleTodo(todo)">
+              {{ todo.completed ? 'Completed' : 'Open' }}
+         </button>
+          <button class="delete" @click="$emit('on-delete', todo.id)">Delete</button>
       </div>
   </div>
 </div>
@@ -14,26 +19,12 @@
 <script>
 export default {
     name:'TodoList',
-    data(){
-        return{
-            todos:[
-                {
-                id: 1,
-                text: 'Learn Vue.js 3',
-                completed: false
-                },
-                {
-                id: 2,
-                text: 'Learn React Js',
-                completed: false
-                },
-                {
-                id: 3,
-                text: 'Learn Angular Js',
-                completed: false
-                }
-
-            ]
+    props:{
+        todos:Array,
+    },
+    methods:{
+        toggleTodo(todo){
+            todo.compeleted = !todo.compeleted
         }
     }
 
@@ -67,9 +58,9 @@ export default {
         cursor: pointer;
     }
     .complete{
-        background-color: #0096D6;
-        border: none;
+        
         color:white;
+        border: none;
         border-radius: 0.3em;
         font-weight: bold;
         padding:5px;
@@ -82,6 +73,12 @@ export default {
         font-weight: bold;
         padding:5px;
         margin-left:3%;
+    }
+    .open{
+        background-color: #0096D6;
+    }
+    .completed{
+        background-color:#89898E;
     }
 
 </style>
