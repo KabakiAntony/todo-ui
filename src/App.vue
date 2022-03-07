@@ -4,12 +4,12 @@
     <li class="logo">Todos App</li>
       <div class="nav-right">
         <li v-if="isLoggedIn">
-          <a href="#" class="screen_name">Hello {{ screen_name }}</a>
+          <router-link :to="{ name: 'Dashboard' }">Hello {{ screen_name }}</router-link>
           <a  class="signout" @click="signOut">Sign Out</a>
         </li>
         <li v-else>
           <router-link :to="{ name: 'Home' }">Home</router-link>
-          <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> |
+          <router-link :to="{ name: 'SignUp' }">Sign Up</router-link> 
           <router-link :to="{name: 'SignIn' }">Sign In</router-link>
         </li>
       </div>
@@ -88,10 +88,6 @@ html,body{
 }
 #nav a.screen_name{
   color: #FF6584;
-}
-#nav a.screen_name:hover{
-  font-weight: bold;
-  cursor:not-allowed;
 }
 #nav a:hover{
   color:#FF6584;

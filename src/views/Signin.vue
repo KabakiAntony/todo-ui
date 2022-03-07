@@ -1,12 +1,12 @@
 <template>
   <div class="page">
+    <Spinner />
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
      <img alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
     <CommonForm  v-bind="commonFormProps" @on-submit="handleSubmit"/>
-    <Spinner />
   </div>
 </template>
 

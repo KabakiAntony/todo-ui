@@ -1,11 +1,11 @@
 <template>
 <div class="signup-page">
+  <Spinner />
   <transition name="toast">
       <ShowAlert  v-if='show' :class="type" :message="message"/>
     </transition>
   <h1>Sign up with this awesome app &#x263A;</h1>
   <CommonForm  v-bind="commonFormProps"  @on-submit="handleSubmit" />
-  <Spinner />
 </div>
 </template>
 

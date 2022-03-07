@@ -1,8 +1,8 @@
 <template>
   <div class="dashboard">
       <div v-show="waiting" class="on-load">
-          <p>Please hold as we verify your email .... </p>
           <Spinner />
+          <p>Please hold as we verify your email .... </p>
       </div>
     <div v-show="verified" class="success">
         <img alt="Ok" src="../assets/images/icons8-ok.svg">
@@ -53,7 +53,7 @@ export default {
                 this.verified = true
                 setTimeout(()=>{
                 this.$router.push({name: 'SignIn'})
-                },6000)
+                },3000)
             } else {
                 this.waiting = false
                 this.failure_message = data.error
