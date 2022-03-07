@@ -1,5 +1,6 @@
 <template>
   <div class="page">
+    <Spinner />
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
@@ -7,7 +8,6 @@
     <p>relax we got you, just enter your email below and we will send you a link shortly.</p>
     <img alt="forgot password" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
     <ForgotForm class="forgot" @on-submit="handleSubmit"/>
-    <Spinner />
   </div>
 </template>
 
@@ -47,10 +47,11 @@ export default {
             if(data.status === 202){
                 this.unloadSpinner()
                 this.loadToast(data.data.message, "success")
+                theForm.email=""
                 this.unloadToast()
                 setTimeout(()=>{
                 this.$router.push({name: 'Home'})
-                },4000)
+                },3000)
             } else {
               this.unloadSpinner()
               this.loadToast(data.error, "error")
