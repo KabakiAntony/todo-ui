@@ -4,30 +4,85 @@
     <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
-    <h1>Set a new password here.</h1>
-    <CommonForm   v-bind="commonFormProps" :class="action" />
-  </div>
+  <h1>Set a new password for your account.</h1>
+    <div id="form-container">
+          <h2 class="form-header">{{ header }}</h2>
+          <form @submit.prevent="handleSubmit">
+              <label>Email</label>
+              <input type="email" v-model="email" disabled required>
+              <label>Password</label>
+              <input type="password" v-model="password" required>
+              <div>
+                  <button type="submit" class="submit">
+                  {{ submit_text }}
+                  </button>
+              </div>
+          </form>
+      </div>
+    </div>
 </template>
 
 <script>
-import CommonForm from "@/components/CommonForm.vue"
 import ShowAlert  from "@/components/ShowAlert.vue"
 import Spinner from "@/components/Spinner.vue"
+import { unloadToast, loadToast, loadSpinner, unloadSpinner } from "../utils"
 
 export default {
     name:'Update',
-    components : { ShowAlert, CommonForm, Spinner },
-     data(){
+    components : { ShowAlert, Spinner },
+    props:['query'],
+    data(){
     return {
-      commonFormProps:{
-        header:"Enter email",
-        submit_text:"Update",
-      },
+      header:"Enter new password",
+      submit_text:"Update password",
       type:null,
       message:null,
       show:false,
-      action:null,
+      email:null,
+      password:null,
     }
+  },
+  methods:{
+    loadSpinner,
+    unloadSpinner,
+    unloadToast,
+    loadToast,
+    async handleSubmit(){
+          const theForm = {
+            email: this.email,
+            password: this.password
+          }
+            this.loadSpinner()
+            const url = `${this.$api}users/update-password`
+            const res = await fetch(url,{
+                method:'PUT',
+                headers:{
+                    'Content-Type': 'application/json',
+                    'auth_token':this.query,
+                    },
+                    body: JSON.stringify(theForm)
+                    })
+            const data = await res.json()
+            if(data.status === 200){
+                this.unloadSpinner()
+                this.loadToast(data.data, "success")
+                this.unloadToast()
+                setTimeout(()=>{
+                this.$router.push({name: 'SignIn'})
+                },4000)
+            } else {
+              this.unloadSpinner()
+              this.loadToast(data.error, "error")
+              this.unloadToast()
+              }
+        },
+  },
+  created(){
+    {
+     const tokenParts = this.query.split('.')
+     const tokenBody = JSON.parse(atob(tokenParts[1]))
+     this.email = tokenBody.email
+   }
   }
 
 }
@@ -37,7 +92,7 @@ export default {
 .signin-page{
     width: 90%;
     margin: 0 auto;
-    margin-top:5%;
+    margin-top:10%;
 }
 
 </style>
