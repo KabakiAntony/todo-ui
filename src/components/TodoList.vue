@@ -1,13 +1,18 @@
 <template>
 <div>
-     <div class="todo-list" v-for="todo in todos" :key="todo.id" data-test="todo">
+     <div 
+     class="todo-list" 
+     v-for="todo in todos" 
+     :key="todo.id"
+     :class="todo.completed ? 'li-completed' : 'li-open'"
+     data-test="todo">
       <li>{{ todo.text }}</li>
       <div class="action-buttons">
           <button 
           class="complete" 
           :class="todo.completed ? 'completed' : 'open'"  
           @click="$emit('on-update', todo.id, todo), toggleTodo(todo)">
-              {{ todo.completed ? 'Completed' : 'Open' }}
+              {{ todo.completed ? 'Undo' : 'Complete' }}
          </button>
           <button class="delete" @click="$emit('on-delete', todo.id)">Delete</button>
       </div>
@@ -58,7 +63,6 @@ export default {
         cursor: pointer;
     }
     .complete{
-        
         color:white;
         border: none;
         border-radius: 0.3em;
@@ -79,6 +83,11 @@ export default {
     }
     .completed{
         background-color:#89898E;
+    }
+        .li-completed{
+        border-left:8px solid  rgb(38, 189, 38);
+        border-bottom-left-radius: 0%;
+        border-top-left-radius: 0%;
     }
 
 </style>
