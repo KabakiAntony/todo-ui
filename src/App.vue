@@ -22,9 +22,7 @@
 </template>
 
 <script>
-
 import { mapGetters }  from 'vuex'
-
 export default {
   methods:{
     async signOut(){
@@ -69,7 +67,6 @@ html,body{
   position: relative;
   min-height: 100vh;
 }
-
 #nav {
   padding: 1em;
   background-color: #3F3D56;
