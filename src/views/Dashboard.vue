@@ -1,6 +1,9 @@
 <template>
 <div class="dashboard">
     <Spinner />
+    <transition name="toast">
+      <ShowAlert  v-if='show' :class="type" :message="message"/>
+    </transition>
     <h1>List things you want to achieve today or cross them off your list</h1>
     <AddTodo @on-submit="addTodo"/>
     <div v-if="todos.length">
@@ -16,25 +19,25 @@
 import AddTodo from '@/components/AddTodo.vue'
 import TodoList from '@/components/TodoList.vue'
 import Spinner from '@/components/Spinner.vue'
-import { loadSpinner, unloadSpinner } from "../utils"
+import ShowAlert  from "@/components/ShowAlert.vue"
+import { unloadToast, loadToast, loadSpinner, unloadSpinner } from "../utils"
 
 export default {
     name: "Dashboard",
-    components:{ AddTodo, TodoList, Spinner },
+    components:{ ShowAlert, AddTodo, TodoList, Spinner },
     data(){
         return{
             type:null,
             message:null,
             show:false,
             todos:[],
-            button_color: '',
-            button_text:'',
-
         }
     },
     methods:{
         loadSpinner,
         unloadSpinner,
+        unloadToast,
+        loadToast,
         async addTodo(theForm){
             this.loadSpinner()
             const url = `${this.$api}todos`
@@ -54,7 +57,8 @@ export default {
                 theForm.text = ""
             } else {
                 this.unloadSpinner()
-              console.log(data.error)
+                this.loadToast(data.error, "error")
+                this.unloadToast()
               }
         },
         async deleteTodo(todoId){
@@ -75,7 +79,8 @@ export default {
                     this.todos = this.$store.getters.Todos
                 } else {
                     this.unloadSpinner()
-                    console.log(data.error)
+                    this.loadToast(data.error, "error")
+                    this.unloadToast()
                 }
             }
             
@@ -104,7 +109,8 @@ export default {
                 this.todos = this.$store.getters.Todos
             } else {
                 this.unloadSpinner()
-                console.log(data.error)
+                this.loadToast(data.error, "error")
+                this.unloadToast()
             }
         }
     },
