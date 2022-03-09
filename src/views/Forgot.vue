@@ -38,7 +38,7 @@ export default {
     loadToast,
      async handleSubmit(theForm){
             this.action="submitting"
-            this.commonFormProps.submit_text ="Sending email ..."
+            this.forgotFormProps.submit_text ="Sending email ..."
             this.loadSpinner()
             const url = `${this.$api}users/forgot`
             const res = await fetch(url,{
@@ -63,7 +63,7 @@ export default {
               this.unloadToast()
               }
             this.action=""
-            this.commonFormProps.submit_text ="Send reset email"
+            this.forgotFormProps.submit_text ="Send reset email"
         },
   }
 }
