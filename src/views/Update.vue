@@ -13,7 +13,7 @@
               <label>Password</label>
               <input type="password" v-model="password" required>
               <div>
-                  <button type="submit" class="submit">
+                  <button type="submit" :class="action" class="submit">
                   {{ submit_text }}
                   </button>
               </div>
@@ -48,6 +48,8 @@ export default {
     unloadToast,
     loadToast,
     async handleSubmit(){
+          this.action="submitting"
+          this.commonFormProps.submit_text ="Updating ..."
           const theForm = {
             email: this.email,
             password: this.password
@@ -75,6 +77,8 @@ export default {
               this.loadToast(data.error, "error")
               this.unloadToast()
               }
+            this.action=""
+            this.commonFormProps.submit_text ="Update password"
         },
   },
   created(){

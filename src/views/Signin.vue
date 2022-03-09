@@ -6,7 +6,7 @@
     </transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
      <img alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
-    <CommonForm  v-bind="commonFormProps" @on-submit="handleSubmit"/>
+    <CommonForm  v-bind="commonFormProps" @on-submit="handleSubmit" :action="action" />
   </div>
 </template>
 
@@ -24,7 +24,7 @@ export default {
       return {
         commonFormProps:{
         header:"Sign In",
-        submit_text:"Sign me in",
+        submit_text:"Sign In",
         bottom_text:"Forgot Password ?",
         bottom_link_text:"Send link",
         route_name:"Forgot"
@@ -41,6 +41,8 @@ export default {
     unloadToast,
     loadToast,
      async handleSubmit(theForm){
+            this.action="submitting"
+            this.commonFormProps.submit_text ="Signing in ..."
             this.loadSpinner()
             let data = await this.$store.dispatch('signIn',theForm)
             if(data.status === 200){
@@ -55,6 +57,8 @@ export default {
               this.loadToast(data.error, "error")
               this.unloadToast()
               }
+            this.action = ""
+            this.commonFormProps.submit_text = "Sign In"
         },
   }
 
@@ -71,5 +75,4 @@ img{
     width: 45%;
     float:left;
 }
-
 </style>

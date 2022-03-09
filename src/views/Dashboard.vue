@@ -5,9 +5,9 @@
       <ShowAlert  v-if='show' :class="type" :message="message"/>
     </transition>
     <h1>List things you want to achieve today or cross them off your list</h1>
-    <AddTodo @on-submit="addTodo"/>
+    <AddTodo @on-submit="addTodo" v-bind="addTodoProps" :action="action" />
     <div v-if="todos.length">
-        <TodoList :todos='todos'  @on-update="updateTodo" @on-delete="deleteTodo"/>
+        <TodoList :todos='todos'  @on-update="updateTodo" @on-delete="deleteTodo" />
     </div>
     <div v-else>
         <p>We found no todos for you, Please add some.</p>
@@ -31,6 +31,10 @@ export default {
             message:null,
             show:false,
             todos:[],
+            action:null,
+            addTodoProps:{
+                submit_text:"Add Todo"
+            }
         }
     },
     methods:{
@@ -39,6 +43,8 @@ export default {
         unloadToast,
         loadToast,
         async addTodo(theForm){
+            this.action="submitting"
+            this.addTodoProps.submit_text ="adding ..."
             this.loadSpinner()
             const url = `${this.$api}todos`
             const res = await fetch(url,{
@@ -60,6 +66,8 @@ export default {
                 this.loadToast(data.error, "error")
                 this.unloadToast()
               }
+            this.action=""
+            this.addTodoProps.submit_text ="Add Todo"
         },
         async deleteTodo(todoId){
             if(confirm('Are you sure you want to delete ?')){
