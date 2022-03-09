@@ -2,7 +2,7 @@
   <div class="add-todo">
       <form @submit.prevent="$emit('on-submit', form)">
           <input type="text" v-model="form.text" required>
-          <button type="submit" class="submit">Add Todo</button>
+          <button type="submit"  class="submit" :class="action">{{ submit_text }}</button>
       </form>
       
   </div>
@@ -11,6 +11,10 @@
 <script>
 export default {
     name:'AddTodo',
+    props:{
+        action:String,
+        submit_text:String,
+    },
     data(){
         return{
             form:{
