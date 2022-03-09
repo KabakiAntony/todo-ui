@@ -85,9 +85,11 @@ export default {
         background-color:#89898E;
     }
         .li-completed{
-        border-left:8px solid  rgb(38, 189, 38);
-        border-bottom-left-radius: 0%;
-        border-top-left-radius: 0%;
+        border-bottom:5px solid  rgb(38, 189, 38);
+        /* border-bottom-left-radius: 0%;
+        border-top-left-radius: 0%; */
+        color:rgb(38, 189, 38);
+       
     }
 
 </style>
