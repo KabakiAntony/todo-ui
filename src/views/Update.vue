@@ -35,6 +35,7 @@ export default {
     return {
       header:"Enter new password",
       submit_text:"Update password",
+      action:null,
       type:null,
       message:null,
       show:false,
