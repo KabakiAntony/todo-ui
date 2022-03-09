@@ -256,4 +256,7 @@ input{
   .right-list{
     float:right
   }
+  .submitting{
+  background-color: #242427b9;
+}
 </style>

@@ -5,7 +5,7 @@
       <ShowAlert  v-if='show' :class="type" :message="message"/>
     </transition>
   <h1>Sign up with this awesome app &#x263A;</h1>
-  <CommonForm  v-bind="commonFormProps"  @on-submit="handleSubmit" />
+  <CommonForm  v-bind="commonFormProps"  @on-submit="handleSubmit" :action="action" />
 </div>
 </template>
 
@@ -22,14 +22,15 @@ export default {
     return {
       commonFormProps:{
         header:"Sign Up",
-        submit_text:"Sign me up",
+        submit_text:"Sign Up",
         bottom_text:"Already have an account ?",
         bottom_link_text:"Sign In",
         route_name:"SignIn",
       },
       type:null,
       message:null,
-      show:false
+      show:false,
+      action:null,
     }
   },
   methods:{
@@ -38,6 +39,8 @@ export default {
     unloadToast,
     loadToast,
      async handleSubmit(theForm){
+            this.action="submitting"
+            this.commonFormProps.submit_text ="Signing up ..."
             this.loadSpinner()
             const url = `${this.$api}users/signup`
             const res = await fetch(url,{
@@ -60,6 +63,8 @@ export default {
               this.loadToast(data.error, "error")
               this.unloadToast()
               }
+              this.action=""
+              this.commonFormProps.submit_text ="Sign Up"
         },
   }
 }

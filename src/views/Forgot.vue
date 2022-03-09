@@ -7,7 +7,7 @@
     <h1>forgot your password ?</h1>
     <p>relax we got you, just enter your email below and we will send you a link shortly.</p>
     <img alt="forgot password" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
-    <ForgotForm class="forgot" @on-submit="handleSubmit"/>
+    <ForgotForm  v-bind="forgotFormProps" @on-submit="handleSubmit" :action="action" />
   </div>
 </template>
 
@@ -26,6 +26,9 @@ export default {
         message:null,
         show:false,
         action:null,
+        forgotFormProps:{
+          submit_text:"Send reset email"
+        }
       }
     },
     methods:{
@@ -34,6 +37,8 @@ export default {
     unloadToast,
     loadToast,
      async handleSubmit(theForm){
+            this.action="submitting"
+            this.commonFormProps.submit_text ="Sending email ..."
             this.loadSpinner()
             const url = `${this.$api}users/forgot`
             const res = await fetch(url,{
@@ -57,6 +62,8 @@ export default {
               this.loadToast(data.error, "error")
               this.unloadToast()
               }
+            this.action=""
+            this.commonFormProps.submit_text ="Send reset email"
         },
   }
 }

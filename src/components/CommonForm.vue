@@ -7,7 +7,7 @@
             <label>Password</label>
             <input type="password" v-model="form.password" required>
             <div>
-                <button type="submit" class="submit">
+                <button type="submit" class="submit" :class="action">
                 {{ submit_text }}
                 </button>
             </div>
@@ -27,7 +27,8 @@ export default {
         submit_text: String,
         bottom_text: String,
         bottom_link_text: String,
-        route_name: String
+        route_name: String,
+        action:String,
     },
     data(){
         return{
@@ -41,4 +42,5 @@ export default {
 </script>
 
 <style scoped>
+
 </style>
