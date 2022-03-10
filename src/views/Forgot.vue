@@ -6,7 +6,7 @@
     </transition>
     <h1>forgot your password ?</h1>
     <p>relax we got you, just enter your email below and we will send you a link shortly.</p>
-    <img alt="forgot password" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
+    <img alt="forgot password" class="signin-img" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
     <ForgotForm  v-bind="forgotFormProps" @on-submit="handleSubmit" :action="action" />
   </div>
 </template>
@@ -68,19 +68,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-.page{
-    width: 90%;
-    margin: 0 auto;
-    margin-top:5%;
-}
-img{
-    width: 45%;
-    float:left;
-}
-p{
-    font-weight: bold;
-    font-size: 110%;
-}
-</style>
