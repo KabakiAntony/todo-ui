@@ -26,11 +26,13 @@ export default {
 }
 #showAlert{
   color:black;
-  width:60%;
+  width:70%;
+  /* width:60%; */
   text-align: justify;
   padding: 0.6rem;
   left: 20%;
-  font-size:80%;
+  /* font-size:100%; */
+  font-size: 90%;
   font-weight: bold;
   position: fixed;
 }

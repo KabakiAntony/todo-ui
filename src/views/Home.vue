@@ -1,17 +1,15 @@
 <template>
-    <TodoIndex msg="Ain't this the best todo app on the internet"/>
+    <Index msg="Ain't this the best todo app on the internet"/>
 </template>
 
 <script>
-import TodoIndex from '@/components/TodoIndex.vue'
+import Index from '@/components/Index.vue'
 
 export default {
   name: 'Home',
   components: {
-    TodoIndex
+    Index
   }
 }
 </script>
 
-<style scoped>
-</style>>

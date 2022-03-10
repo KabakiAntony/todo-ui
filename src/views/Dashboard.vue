@@ -1,5 +1,5 @@
 <template>
-<div class="dashboard">
+<div class="page">
     <Spinner />
     <transition name="toast">
       <ShowAlert  v-if='show' :class="type" :message="message"/>
