@@ -4,7 +4,7 @@
   <transition name="toast">
       <ShowAlert  v-if='show' :class="type" :message="message"/>
     </transition>
-  <h1 class="signup-h1">Sign up with this awesome app &#x263A;</h1>
+  <h1 class="signup-h1" >Sign up with this awesome app &#x263A;</h1>
   <CommonForm  v-bind="commonFormProps"  @on-submit="handleSubmit" :action="action" />
 </div>
 </template>
