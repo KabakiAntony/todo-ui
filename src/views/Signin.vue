@@ -5,8 +5,10 @@
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
-     <img class="signin-img" alt="Todos UI Logo" src="../assets/images/undraw_sign_in_re_o58h.svg">
+    <div class="holder">
+     <img alt="Todos UI Logo" class="side-img" src="../assets/images/undraw_sign_in_re_o58h.svg">
     <CommonForm  v-bind="commonFormProps" @on-submit="handleSubmit" :action="action" />
+    </div>
   </div>
 </template>
 
