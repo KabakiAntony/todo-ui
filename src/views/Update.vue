@@ -1,10 +1,10 @@
 <template>
-  <div class="signin-page">
+  <div class="page">
     <Spinner />
     <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
-  <h1>Set a new password for your account.</h1>
+    <h1>Set a new password for your account.</h1>
     <div id="form-container">
           <h2 class="form-header">{{ header }}</h2>
           <form @submit.prevent="handleSubmit">
