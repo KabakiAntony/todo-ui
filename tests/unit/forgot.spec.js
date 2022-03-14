@@ -11,7 +11,7 @@ describe("Forgot.vue", ()=>{
     
     it("test displaying a forgot question on the page", ()=>{
         const wrapper = mount(Forgot)
-        expect(wrapper.get('h1').text()).toEqual("forgot your password ?")
-        expect(wrapper.get('p').text()).toContain("relax we got you, just enter")
+        expect(wrapper.get('h1').text()).toEqual("Forgot your password ?")
+        expect(wrapper.get('p').text()).toContain("We got you, just enter")
     })
 })
