@@ -1,6 +1,6 @@
 <template>
-<div>
-  <ul id="nav">
+ <div>
+   <ul id="nav">
     <li class="logo">Todos App</li>
       <div class="nav-right">
         <li v-if="isLoggedIn">
@@ -13,12 +13,12 @@
           <router-link :to="{name: 'SignIn' }">Sign In</router-link>
         </li>
       </div>
-    </ul>
+    </ul> 
   <router-view/>
   <footer>
-    <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">find the developer here.</a></p>
+    <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">Find me here.</a></p>
   </footer>
-</div>
+ </div>
 </template>
 
 <script>
