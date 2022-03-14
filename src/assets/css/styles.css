@@ -4,7 +4,6 @@ html,body{
   padding:0;
   font-size:80%;
   color: #212529;
-  height: 100%;
   position:relative;
 }
 #app {
@@ -17,22 +16,21 @@ html,body{
   min-width: 250px;
   position: relative;
   min-height: 100vh;
-  padding-bottom:60px;
+  padding-bottom:100px;
 }
 .page{
   width:90%;
   margin:0 auto;
 }
 #nav {
-  padding: 1em;
+  padding: 1.5em;
   background-color: #3F3D56;
   height:60px;
   width: 100%;
 }
 #nav a {
   float:left;
-  color:white;
-  text-align: center;
+  color:#ffffff;
   text-decoration: none;
   font-weight:bold;
 }
@@ -47,7 +45,7 @@ html,body{
   font-weight: normal;
 }
 .logo {
-  font-size:1.2rem;
+  font-size:2em;
   font-weight: bold;
   color:#ffffff;
 }
@@ -57,19 +55,16 @@ html,body{
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  overflow: hidden;
 }
 li {
   float: left;
 }
 li a {
-  padding: 8px;
+  padding: 5px;
 }
 #nav .username{
   font-weight: bold;
   color:rgb(0, 0, 0);
-  font-size: normal;
 }
 #nav .signout:hover{
   cursor:pointer;
@@ -79,7 +74,7 @@ footer {
   bottom:0;
   background-color: #3F3D56;
   width: 100%;
-  color: white;
+  color: #ffffff;
   text-align: center;
 }
 footer p{
@@ -88,488 +83,481 @@ footer p{
 footer a{
   color:#FF6584;
   padding-top:10px;
-  text-align: center;
   text-decoration: none;
 }
 footer a:hover {
-  color:rgb(38, 189, 38);
-  text-decoration: underline;
+  color:#26bd26;
 }
 #form-container{
-    margin: 0 auto;
-    background:#89898E;
-    border-radius:0.5rem;
-    min-width: 250px;
-    width:90%;
-    max-width: 320px;
-    font-weight: bold;
-    overflow: hidden;
-    color:rgb(87, 86, 86);
-    text-align: justify;
+  margin: 0 auto;
+  background:#89898E;
+  border-radius:0.5em;
+  min-width: 250px;
+  width:90%;
+  max-width: 320px;
+  font-weight: bold;
+  overflow: hidden;
+  color:#575656;
+  text-align: justify;
 }
 form{
-    padding:30px;
+  padding:30px;
 }
 .form-header{
-    text-align:center;
-    background-color: #3F3D56;
-    padding: 10px;
-    margin:0;
-    font-weight: bold;
-    color: rgba(255,255,255);
+  text-align:center;
+  background-color: #3F3D56;
+  padding: 10px;
+  margin:0;
+  color: #ffffff;
 }
 input{
-    display: block;
-    margin-bottom: 10px;
-    padding:10px;
-    width:100%;
-    font-weight: bold;
-    border-radius: 0.5rem;
-    border:1px solid  rgb(51, 49, 49);
+  margin-bottom: 10px;
+  padding:10px;
+  width:100%;
+  font-weight: bold;
+  border-radius: 0.5em;
+  border:1px solid  #3F3D56;
 }
-  button:hover{
-    background-color: white;
-    color: #3F3D56;
-    cursor: pointer;
-  }
-  .submit{
-    font-weight: bold;
-    background-color: #3F3D56;
-    border-radius:0.5rem;
-    border:none;
-    text-decoration: none;
-    padding: 10px;
-    color:rgb(255, 255, 255);
-    width:100%;
-    margin-top: 10px;
-  }
-  .text-center{
-    text-align: center;
-    margin-top: inherit;
-    margin-top:20px;
-    font-weight: bold;
-     color:#000000;
-  }
-  .text-center a{
-    text-decoration:none;
-    color:#ffffff;
-  }
-  .text-center a:hover{
-      color:#3F3D56;
-      text-decoration: underline; 
-  }
-  label {
-    display: inline-block;
-    margin: 5px 0 5px;
-    color:rgb(0, 0, 0);
-    font-weight: bold;
+.submit{
+  font-weight: bold;
+  background-color: #3F3D56;
+  border-radius:0.5em;
+  border:none;
+  text-decoration: none;
+  padding: 10px;
+  color:#ffffff;
+  width:100%;
+  margin-top: 10px;
+  margin-bottom:5px;
+}
+button:hover{
+  background-color: #ffffff;
+  color: #3F3D56;
+  cursor: pointer;
+}
+.text-center{
+  text-align: center;
+  margin-top: inherit;
+  margin-top:20px;
+  font-weight: bold;
+   color:#000000;
+}
+.text-center a{
+  text-decoration:none;
+  color:#ffffff;
+}
+.text-center a:hover{
+    color:#3F3D56;
+    text-decoration: underline;
+}
+label {
+  display: inline-block;
+  margin: 5px 0 5px;
+  color:#000000;
+  font-weight: bold;
 }
 .spinner {
-    margin: 20px auto;
-    text-align: center;
-    display:none;
-  }
-  
-  .spinner > div {
-    width: 12px;
-    height: 12px;
-    background-color: #3F3D56;
-    border-radius: 100%;
-    display: inline-block;
-    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
-  }
-  
-  .spinner .bounce1 {
-    -webkit-animation-delay: -0.32s;
-    animation-delay: -0.32s;
-  }
-  
-  .spinner .bounce2 {
-    -webkit-animation-delay: -0.16s;
-    animation-delay: -0.16s;
-  }
-  
-  @-webkit-keyframes sk-bouncedelay {
-    0%, 80%, 100% { -webkit-transform: scale(0) }
-    40% { -webkit-transform: scale(1.0) }
-  }
-  
-  @keyframes sk-bouncedelay {
-    0%, 80%, 100% { 
-      -webkit-transform: scale(0);
-      transform: scale(0);
-    } 40% { 
-      -webkit-transform: scale(1.0);
-      transform: scale(1.0);
-    }
-  }
-  .right-list{
-    float:right
-  }
-  .submitting{
-  background-color: #242427b9;
+  margin: 10px auto;
+  text-align: center;
+  display:none;
 }
-img{
-  margin-top: 40%;
-  height: 35%;
-  width: 70%;
+.spinner > div {
+  width: 12px;
+  height: 12px;
+  background-color: #3F3D56;
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
+.submitting{
+  background-color: #6f6fd49a;
 }
 h1{
   font-size:140%;
-  margin-top: 10%;
 }
-.signin-img {
-    margin-top: 5%;
-    height: 35%;
-    width: 70%;
-  }
-  .signup-h1{
-    margin-top: 30%;
-    margin-bottom: 10%;
-  }
-  .add-todo{
-    background:#89898E;
-    display:inline-block;
-    width:90%;
-    border-radius:0.5rem;
-    border:none;
-    margin-bottom: 20px;
+.index-h1{
+  margin-top:38%;
+}
+.signup-h1{
+  margin-top: 20%;
+  margin-bottom:10%;
+}
+img{
+  width: 85%;
+  margin:0 auto;
+  margin-bottom: 3%;
+}
+.add-todo{
+  background:#89898E;
+  width:100%;
+  border-radius:0.5em;
+  border:none;
+  margin-bottom: 20px;
 }
 .add-todo-submit{
-    background-color: #3F3D56;
-    border-radius:0.5rem;
-    border:none;
-    text-decoration: none;
-    padding: 10px;
-    color:rgb(255, 255, 255);
-    font-size: 90%;
-    width:40%;
-    text-align: center;
-    display: inline-block;
-    margin-left:5%;
-}
-.add-todo-submit:hover{
-    background-color: white;
-    color: #3F3D56;
-    cursor: pointer;
-}
-input[type=text]{
-    width: 100%;
-    border: none;
-    color: rgb(0, 0, 0);
-    padding: 12px;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 90%;
+  background-color: #3F3D56;
+  border-radius:0.5rem;
+  border:none;
+  text-decoration: none;
+  padding: 10px;
+  color:#ffffff;
+  font-size: 90%;
+  width:40%;
+  text-align: center;
 }
 .todo-list{
-    background-color: #3F3D56;
-    width:90%;
-    margin: 0 auto;
-    color:white;
-    padding: 10px;
-    border-radius: 0.5em;
-    margin-bottom: 3px;
- }
+  background-color: #3F3D56;
+  width:100%;
+  color:#ffffff;
+  padding: 10px;
+  border-radius: 0.5em;
+  margin-bottom: 3px;
+}
 .todo-list-li{
-    text-align: left;
-    list-style: none;
-    float:left;
-    margin-left:5%;
-    font-size: 120%;
+  text-align: left;
+  list-style: none;
+  font-size: 120%;
+}
+/* toast styling ...*/
+.error{
+  background-color: #e97971;
+  border: 2px solid rgb(231, 24, 9);
+}
+.success {
+  background-color: #d4edda;
+  border: 2px solid #26bd26;
+}
+#showAlert{
+  color:black;
+  width:90%;
+  text-align: justify;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  font-size: 110%;
+  font-weight: bold;
+  position: fixed;
+}
+.toast-enter-from{
+  opacity: 0;
+  transform:translateY(-60px)
+}
+.toast-enter-active{
+  transition: all 0.3s ease;
+}
+.toast-leave-to{
+  opacity: 0;
+  transform:translateY(-60px)
+}
+.toast-leave-active{
+  transition: all 0.3s ease;
 }
 .action-buttons{
-    margin-left: 55%;
-    margin-top: 10%;
+  margin-left: 55%;
+  margin-top: 10%;
 }
 button{
-    width:50%;
-    font-size: smaller;
-}
-button:hover{
-    background-color: white;
-    color: #3F3D56;
-    cursor: pointer;
-}
-.complete{
-    color:white;
-    border: none;
-    border-radius: 0.3em;
-    font-weight: bold;
-    padding:5px;
+  width:50%;
+  font-size: smaller;
+  color: #ffffff;
+  border:none;
+  border-radius: 0.3em;
+  font-weight: bold;
+  padding:5px;
 }
 .delete{
-   background-color: #f33629;
-    border:none;
-    color:white;
-    border-radius: 0.3em;
-    font-weight: bold;
-    padding:5px;
+ background-color: #f33629;
 }
 .open{
-    background-color: #0096D6;
+  background-color: #0096D6;
 }
 .completed{
-    background-color:#89898E;
+  background-color:#89898E;
 }
 .li-completed{
-    border-bottom:5px solid  rgb(38, 189, 38);
-    color:rgb(38, 189, 38);
+  border:2px solid  #26bd26;
+  color:#26bd26;
 }
-
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-
-    html,body{
-        font-size:100%
-      }
-      h1{
-       font-size:130%;
-       margin-top: 5%;
-     }
-     img{
-       margin-top: 20%;
-       height: 35%;
-       width: 80%;
-     }
-     .signin-img {
-        height: 35%;
-        width: 80%;
-        margin-bottom:5%;
-
-     }
-     .text-center{
-         font-size:90%;
-     }
-     #form-container{
-         font-size:90%;
-     }
-     .signup-h1{
-         margin-top: 8%;
-         margin-bottom: 5%;
-       }
-       .form-header{
-           font-size: 100%;
-       }
-       .logo{
-           font-size:1.5rem;
-       }
-     .add-todo{
-         width:90%;
-     }
-     .add-todo-submit{
-         font-size: 100%;
-         width:20%;
-     }
-     input[type=text]{
-         width: 70%;
-     }
-     .todo-list{
-         width: 90%;
-     }
-     .todo-list-li{
-         font-size:100%;
-     }
-     .action-buttons{
-         margin-top: 3%;
-         margin-left:70%;
-     }
-     button{
-         width:48%;
-     }
-     .delete{
-         margin-left: 3%;
-     }
+   html,body{
+    font-size:100%
+   }
+   .index-h1{
+     margin-top: 15%;
+   }
+   .signup-h1{
+     margin-top:5%;
+   }
+   img{
+   width: 70%;
+   }
+   .side-img{
+     margin-top:8%;
+     width:60%;
+   }
+   .text-center{
+     font-size:90%;
+   }
+   #form-container{
+     font-size:100%;
+   }
+   .form-header{
+       font-size: 100%;
+   }
+   .logo{
+       font-size:1.5em;
+   }
+   .add-todo{
+     margin: 0 auto;
+     width:90%;
+     margin-bottom: 20px;
+   }
+   .add-todo-submit{
+     font-size: 100%;
+     width:20%;
+   }
+   .todo-list{
+     width: 90%;
+     margin:0 auto;
+     margin-bottom:5px;
+   }
+   .todo-list-li{
+     font-size:100%;
+   }
+   .action-buttons{
+     margin-left:70%;
+   }
+   .holder{
+   display: inline-block;
+   width: 80%;
+   margin: 0 auto;
+   }
+   #showAlert{
+     width: 70%;
+     left:15%;
+     font-size: 95%;
+   }
 
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    html,body{
-        font-size:100%
-      }
-      h1{
-       font-size:130%;
-       margin-top: 12%;
+  html,body{
+      font-size:100%
+    }
+    h1{
+     font-size:130%;
+     margin-top: 12%;
+   }
+   img{
+     margin-top: 15%;
+     height: 35%;
+     width: 70%;
+   }
+   .signin-img {
+       margin-top:10%;
+       width: 45%;
+       float:left;
+   }
+   .text-center{
+       font-size:90%;
+   }
+   #form-container{
+       margin-top:8%;
+       font-size:90%;
+       width:300px;
+   }
+   .signup-h1{
+       margin-top: 8%;
+       margin-bottom: 5%;
      }
-     img{
-       margin-top: 15%;
-       height: 35%;
-       width: 70%;
-     }
-     .signin-img {
-         margin-top:10%;
-         width: 45%;
-         float:left;
-     }
-     .text-center{
-         font-size:90%;
-     }
-     #form-container{
-         margin-top:8%;
-         font-size:90%;
-         width:300px;
-     }
-     .signup-h1{
-         margin-top: 8%;
-         margin-bottom: 5%;
-       }
-       .form-header{
-           font-size: 100%;
-       }
-       .logo{
-           font-size:1.5rem;
-       }
-     .add-todo{
-         width:90%;
-     }
-     .add-todo-submit{
+     .form-header{
          font-size: 100%;
-         width:20%;
      }
-     input[type=text]{
-         width: 70%;
+     .logo{
+         font-size:1.5rem;
      }
-     .todo-list{
-         width: 90%;
-     }
-     .todo-list-li{
-         font-size:100%;
-     }
-     .action-buttons{
-         margin-top: 5%;
-         margin-left:70%;
-     }
-     button{
-         width:48%;
-     }
-     .delete{
-         margin-left: 3%;
-     }
+   .add-todo{
+       width:90%;
+   }
+   .add-todo-submit{
+       font-size: 100%;
+       width:20%;
+   }
+   input[type=text]{
+       width: 70%;
+   }
+   .todo-list{
+       width: 90%;
+   }
+   .todo-list-li{
+       font-size:100%;
+   }
+   .action-buttons{
+       margin-top: 5%;
+       margin-left:70%;
+   }
+   button{
+       width:48%;
+   }
+   .delete{
+       margin-left: 3%;
+   }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-    html,body{
-        font-size:100%
-      }
-      h1{
-       font-size:150%;
-       margin-top: 5%;
+  html,body{
+      font-size:100%
+    }
+    h1{
+     font-size:150%;
+     margin-top: 5%;
+   }
+   img{
+     margin-top: 5%;
+     height: 35%;
+     width: 70%;
+   }
+   .signin-img {
+       width: 45%;
+       float:left;
+   }
+   .text-center{
+       font-size:90%;
+   }
+   #form-container{
+       font-size:90%;
+   }
+   .signup-h1{
+       margin-top: 8%;
+       margin-bottom: 5%;
      }
-     img{
-       margin-top: 5%;
-       height: 35%;
-       width: 70%;
-     }
-     .signin-img {
-         width: 45%;
-         float:left;
-     }
-     .text-center{
-         font-size:90%;
-     }
-     #form-container{
-         font-size:90%;
-     }
-     .signup-h1{
-         margin-top: 8%;
-         margin-bottom: 5%;
-       }
-       .form-header{
-           font-size: 100%;
-       }
-       .logo{
-           font-size:1.5rem;
-       }
-     .add-todo{
-         width:90%;
-     }
-     .add-todo-submit{
+     .form-header{
          font-size: 100%;
-         width:20%;
      }
-     input[type=text]{
-         width: 70%;
+     .logo{
+         font-size:1.5rem;
      }
-     .todo-list{
-         width: 90%;
-     }
-     .todo-list-li{
-         font-size:100%;
-     }
-     .action-buttons{
-         margin-top: 0%;
-         margin-left:70%;
-     }
-     button{
-         width:48%;
-     }
-     .delete{
-         margin-left: 3%;
-     }
+   .add-todo{
+       width:90%;
+   }
+   .add-todo-submit{
+       font-size: 100%;
+       width:20%;
+   }
+   input[type=text]{
+       width: 70%;
+   }
+   .todo-list{
+       width: 90%;
+   }
+   .todo-list-li{
+       font-size:100%;
+   }
+   .action-buttons{
+       margin-top: 0%;
+       margin-left:70%;
+   }
+   button{
+       width:48%;
+   }
+   .delete{
+       margin-left: 3%;
+   }
+   #showAlert{
+    width: 70%;
+    left:15%;
+    font-size: 95%;
+  }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
- html,body{
-   font-size:100%
- }
- h1{
-  font-size:200%;
-  margin-top: 5%;
+html,body{
+ font-size:100%
 }
-img{
-  margin-top: 5%;
-  height: 35%;
-  width: 70%;
-}
-.signin-img {
-    width: 45%;
-    float:left;
-}
-.text-center{
-    font-size:90%;
-}
-#form-container{
-    font-size:90%;
+.index-h1{
+  margin-top: 4%;
 }
 .signup-h1{
-    margin-top: 8%;
-    margin-bottom: 5%;
-  }
-  .form-header{
-      font-size: 100%;
-  }
-  .logo{
-      font-size:1.5rem;
-  }
+  margin-top:4%;
+  margin-bottom:2%;
+}
+img{
+width: 70%;
+}
+.side-img{
+  margin-top:8%;
+  width:45%;
+  float:left;
+}
+.text-center{
+  font-size:90%;
+}
+#form-container{
+  font-size:100%;
+}
+.form-header{
+    font-size: 100%;
+}
+.logo{
+    font-size:1.5em;
+}
 .add-todo{
-    width:70%;
+  margin: 0 auto;
+  width:80%;
+  margin-bottom: 20px;
 }
 .add-todo-submit{
-    font-size: 100%;
-    width:20%;
-}
-input[type=text]{
-    width: 70%;
+  font-size: 100%;
+  width:20%;
+  margin-left:5%
 }
 .todo-list{
-    width: 70%;
+  width: 80%;
+  margin:0 auto;
+  margin-bottom:5px;
 }
 .todo-list-li{
-    font-size:100%;
-    
+  font-size:100%;
 }
 .action-buttons{
-    margin-top: 0%;
-    margin-left:70%;
-}
-button{
-    width:48%;
+  margin-left:70%;
 }
 .delete{
-    margin-left: 3%;
+  margin-left: 3%;
+}
+.holder{
+display: inline-block;
+width: 80%;
+margin: 0 auto;
+}
+#showAlert{
+  width: 70%;
+  left:15%;
+  font-size: 95%;
 }
 }
