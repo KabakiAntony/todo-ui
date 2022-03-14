@@ -29,9 +29,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-#form-container{
-    margin-top:10%;
-}
-</style>
