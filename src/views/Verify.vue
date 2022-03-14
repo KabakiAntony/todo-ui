@@ -1,5 +1,5 @@
 <template>
-  <div class="dashboard">
+  <div class="page">
       <div v-show="waiting" class="on-load">
           <Spinner />
           <p>Please hold as we verify your email .... </p>
