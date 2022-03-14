@@ -4,10 +4,12 @@
      <transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
     </transition>
-    <h1>forgot your password ?</h1>
-    <p>relax we got you, just enter your email below and we will send you a link shortly.</p>
-    <img alt="forgot password" class="signin-img" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
-    <ForgotForm  v-bind="forgotFormProps" @on-submit="handleSubmit" :action="action" />
+    <h1>Forgot your password ?</h1>
+    <p>We got you, just enter your email below and we will send you a link shortly.</p>
+    <div class="holder">
+      <img alt="forgot password" class="side-img" src="../assets/images/undraw_forgot_password_re_hxwm.svg">
+      <ForgotForm  v-bind="forgotFormProps" @on-submit="handleSubmit" :action="action" />
+    </div>
   </div>
 </template>
 
