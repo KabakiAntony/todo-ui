@@ -4,8 +4,28 @@ import CommonForm from '@/components/CommonForm.vue'
 describe('CommonForm.vue', () => {
   it('tests we are getting the right component by name', () => {
     const wrapper = shallowMount(CommonForm)
-    
+
     expect(wrapper.vm.$options.name).toMatch('CommonForm')
+  })
+
+  it('test that a form is rendered', ()=>{
+    const wrapper = shallowMount(CommonForm)
+    expect(wrapper.find('form').exists()).toBe(true)
+  })
+
+  it('test that our form has input fields', ()=>{
+    const wrapper = shallowMount(CommonForm)
+    expect(wrapper.find('form > input').exists()).toBe(true)
+  })
+
+  it('test that our form has an email input field',()=>{
+    const wrapper = shallowMount(CommonForm)
+    expect(wrapper.get('input[type=email]').exists()).toBe(true)
+  })
+
+  it('test that our form has a password input field',()=>{
+    const wrapper = shallowMount(CommonForm)
+    expect(wrapper.get('input[type=password]').exists()).toBe(true)
   })
 
   it('test setting values on inputs',async ()=>{
@@ -24,6 +44,13 @@ describe('CommonForm.vue', () => {
       expect(password_input.element.value).toBe('password123')
   })
 
+  it('test on submit event is emitted',()=>{
+    const wrapper = shallowMount(CommonForm)
+    wrapper.find('form').trigger('submit.prevent')
+
+    expect(wrapper.emitted()).toHaveProperty('on-submit')
+  })
+
   it('test submitting the form', async () => {
     const wrapper = shallowMount(CommonForm)
 
@@ -36,31 +63,22 @@ describe('CommonForm.vue', () => {
 
     expect(wrapper.emitted('on-submit')[0][0]).toStrictEqual({email,password})
   })
-  it('test that props render when passed', ()=>{
-    const wrapper = mount(CommonForm,{
-      global: { stubs: ['CommonForm']}
-    })
-    
-    const foo = wrapper.getComponent({name:'CommonForm'})
 
-    expect(foo.props('header')).toEqual(undefined)
-    expect(foo.props('submit_text')).toEqual(undefined)
-    expect(foo.props('bottom_text')).toEqual(undefined)
-    expect(foo.props('bottom_link_text')).toEqual(undefined)
-    expect(foo.props(' route_name')).toEqual(undefined)
-  })
   it('test setting props', async () =>{
     const wrapper = mount(CommonForm, {
       props:{
         header:'form header 1',
+        submit_text: 'submit',
+        bottom_text: 'already have an account',
+        bottom_link_text: 'signin',
+        route_name: 'home',
+        action: 'submitting',
       }
     })
-
-    expect(wrapper.html()).toContain('form header 1')
+    expect(wrapper.get('h2').text()).toContain('form header 1')
     
     await wrapper.setProps({ header: 'form header 2' })
 
-    expect(wrapper.html()).toContain('form header 2')
+    expect(wrapper.get('h2').text()).toContain('form header 2')
   })
-  
 })

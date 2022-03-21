@@ -11,7 +11,7 @@ describe("Update.vue", ()=>{
     
     it("test displaying a set new password message", ()=>{
         const wrapper = mount(Update)
-        expect(wrapper.get('h1').text()).toEqual("Set a new password for your account.")
+        expect(wrapper.get('h1').text()).toContain("Set a new password")
 
     })
 })
