@@ -6,6 +6,7 @@ const state = {
   };
   const actions = {
     async getTodos({commit}){
+      try{
         const url = `${this.$api}todos`
         const res = await fetch(url,{
         method:'GET',
@@ -21,6 +22,13 @@ const state = {
           commit('RESET_TODOS')
         }
         return data
+      }
+      catch(err)
+      {
+        return err
+
+      }
+        
    },
   };
   const mutations = {
