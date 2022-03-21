@@ -46,8 +46,9 @@ export default {
             this.action="submitting"
             this.commonFormProps.submit_text ="Signing in ..."
             this.loadSpinner()
-            let data = await this.$store.dispatch('signIn',theForm)
-            if(data.status === 200){
+            try{
+              let data = await this.$store.dispatch('signIn',theForm)
+              if(data.status === 200){
                 this.unloadSpinner()
                 this.loadToast(data.data.message, "success")
                 this.unloadToast()
@@ -61,6 +62,11 @@ export default {
               }
             this.action = ""
             this.commonFormProps.submit_text = "Sign In"
+            }
+            catch(err){
+              this.loadToast(err, "error")
+              this.unloadToast()
+            }
         },
   }
 

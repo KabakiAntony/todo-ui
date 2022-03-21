@@ -11,7 +11,7 @@ describe("Signin.vue", ()=>{
     
     it("test displaying a signin message on the page", ()=>{
         const wrapper = mount(Signin)
-        expect(wrapper.get('h1').text()).toEqual("Want to see awesomeness login down here it's so simple")
+        expect(wrapper.get('h1').text()).toContain("Want to see awesomeness")
 
     })
 })

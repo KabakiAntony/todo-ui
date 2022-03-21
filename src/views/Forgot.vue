@@ -42,30 +42,37 @@ export default {
             this.action="submitting"
             this.forgotFormProps.submit_text ="Sending email ..."
             this.loadSpinner()
-            const url = `${this.$api}users/forgot`
-            const res = await fetch(url,{
-                method:'POST',
-                headers:{
-                    'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(theForm)
-                    })
-            const data = await res.json()
-            if(data.status === 202){
+            try{
+              const url = `${this.$api}users/forgot`
+              const res = await fetch(url,{
+                  method:'POST',
+                  headers:{
+                      'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(theForm)
+                      })
+              const data = await res.json()
+              if(data.status === 202){
+                  this.unloadSpinner()
+                  this.loadToast(data.data.message, "success")
+                  theForm.email=""
+                  this.unloadToast()
+                  setTimeout(()=>{
+                  this.$router.push({name: 'Home'})
+                  },3000)
+              } else {
                 this.unloadSpinner()
-                this.loadToast(data.data.message, "success")
-                theForm.email=""
+                this.loadToast(data.error, "error")
                 this.unloadToast()
-                setTimeout(()=>{
-                this.$router.push({name: 'Home'})
-                },3000)
-            } else {
-              this.unloadSpinner()
-              this.loadToast(data.error, "error")
-              this.unloadToast()
-              }
-            this.action=""
-            this.forgotFormProps.submit_text ="Send reset email"
+                }
+              this.action=""
+              this.forgotFormProps.submit_text ="Send reset email"
+            }
+            catch(err)
+            {
+               this.loadToast(err, "error")
+               this.unloadToast()
+            }
         },
   }
 }

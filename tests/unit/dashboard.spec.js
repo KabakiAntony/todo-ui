@@ -9,8 +9,8 @@ describe("Dashboard.vue", ()=>{
         expect(wrapper.vm.$options.name).toMatch('Dashboard')
     })
     
-    it("test displaying a header on the dashboard", ()=>{
-        const wrapper = mount(Dashboard)
+    it("test displaying a header on the dashboard", async ()=>{
+        const wrapper = shallowMount(Dashboard)
         expect(wrapper.get('h1').text()).toContain("List things you want to")
 
     })

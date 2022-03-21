@@ -5,16 +5,20 @@
      v-for="todo in todos" 
      :key="todo.id"
      :class="todo.completed ? 'li-completed' : 'li-open'"
-     data-test="todo">
-      <li class="todo-list-li">{{ todo.text }}</li>
+    >
+      <li  data-test="todo" class="todo-list-li">{{ todo.text }}</li>
       <div class="action-buttons">
-          <button 
+          <button
+          data-test="complete-button"
           class="complete" 
           :class="todo.completed ? 'completed' : 'open'"  
           @click="$emit('on-update', todo.id, todo), toggleTodo(todo)">
               {{ todo.completed ? 'Undo' : 'Complete' }}
          </button>
-          <button class="delete" @click="$emit('on-delete', todo.id)">Delete</button>
+          <button
+          data-test="delete-button"
+          class="delete" 
+          @click="$emit('on-delete', todo.id)">Delete</button>
       </div>
   </div>
 </div>

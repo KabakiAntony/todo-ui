@@ -84,9 +84,14 @@ export default {
   },
   created(){
     {
-     const tokenParts = this.query.split('.')
-     const tokenBody = JSON.parse(atob(tokenParts[1]))
-     this.email = tokenBody.email
+      
+      if (this.query){
+        const tokenParts = this.query.split('.')
+        const tokenBody = JSON.parse(atob(tokenParts[1]))
+        this.email = tokenBody.email
+      }
+      
+      
    }
   }
 
