@@ -16,7 +16,7 @@
     </ul> 
   <router-view/>
   <footer>
-    <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakikiarie">Find me here.</a></p>
+    <p>&copy; Todo APP 2022&nbsp;&nbsp;<a href="https://twitter.com/kabakiantony">Find me here.</a></p>
   </footer>
  </div>
 </template>
