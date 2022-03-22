@@ -1,5 +1,8 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Forgot from '@/views/Forgot.vue'
+import App from "../../src/App.vue"
+import router from '../../src/router/index.js'
+import store from '../../src/store/index.js'
 
 
 
@@ -13,5 +16,16 @@ describe("Forgot.vue", ()=>{
         const wrapper = mount(Forgot)
         expect(wrapper.get('h1').text()).toEqual("Forgot your password ?")
         expect(wrapper.get('p').text()).toContain("We got you, just enter")
+    })
+
+     it('renders forgot component via routing', async ()=>{
+        router.push({name: 'Forgot'})
+        await router.isReady()
+        const wrapper = mount(App,{
+            global: {
+                plugins: [router, store]
+            }
+        })
+        expect(wrapper.findComponent(Forgot).exists()).toBe(true)
     })
 })
