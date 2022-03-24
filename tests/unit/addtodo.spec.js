@@ -25,6 +25,13 @@ describe("AddTodo.vue", ()=>{
         
         expect(wrapper.emitted('on-submit')[0][0]).toStrictEqual({ text: 'New todo' })
     })
+
+    it('test on submit event is emitted',()=>{
+        const wrapper = shallowMount(AddTodo)
+        wrapper.find('form').trigger('submit.prevent')
+    
+        expect(wrapper.emitted()).toHaveProperty('on-submit')
+      })
     
     
 })
