@@ -10,7 +10,7 @@
         <TodoList :todos='todos'  @on-update="updateTodo" @on-delete="deleteTodo" />
     </div>
     <div v-else>
-        <p>We found no todos for you, Please add some.</p>
+        <p class='loading-message'>{{ loading_message }}</p>
     </div>
 </div>
 </template>
@@ -32,6 +32,7 @@ export default {
             show:false,
             todos:[],
             action:null,
+            loading_message: "getting your todos ....",
             addTodoProps:{
                 submit_text:"Add Todo"
             }
@@ -85,6 +86,9 @@ export default {
                     this.unloadSpinner()
                     await this.$store.dispatch('getTodos')
                     this.todos = this.$store.getters.Todos
+                     if (this.todos.length == 0){
+                            this.loading_message = "We found no todos for you, please add some."
+                        }
                 } else {
                     this.unloadSpinner()
                     this.loadToast(data.error, "error")
@@ -125,7 +129,16 @@ export default {
     async created(){
         await this.$store.dispatch('getTodos')
         this.todos = this.$store.getters.Todos
+        if (this.todos.length == 0){
+            this.loading_message = "We found no todos for you, please add some."
+        }
     },
 
 }
 </script>
+<style scoped>
+ .loading-message{
+     font-weight: bold;
+     font-size: 120%;
+ }
+</style>
