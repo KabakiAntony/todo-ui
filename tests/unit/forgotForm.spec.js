@@ -8,6 +8,21 @@ describe('ForgotForm.vue', () => {
     expect(wrapper.vm.$options.name).toMatch('ForgotForm')
   })
 
+  it('test that a form is rendered', ()=>{
+    const wrapper = shallowMount(ForgotForm)
+    expect(wrapper.find('form').exists()).toBe(true)
+  })
+
+  it('test that our form has input fields', ()=>{
+    const wrapper = shallowMount(ForgotForm)
+    expect(wrapper.find('form > input').exists()).toBe(true)
+  })
+
+  it('test that our form has an email input field',()=>{
+    const wrapper = shallowMount(ForgotForm)
+    expect(wrapper.get('input[type=email]').exists()).toBe(true)
+  })
+
   it('test setting values on inputs',async ()=>{
       const wrapper = shallowMount(ForgotForm)
 

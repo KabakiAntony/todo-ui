@@ -1,5 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Forgot from '@/views/Forgot.vue'
+import ForgotForm from '../../src/components/ForgotForm.vue'
 import App from "../../src/App.vue"
 import router from '../../src/router/index.js'
 import store from '../../src/store/index.js'
@@ -27,5 +28,9 @@ describe("Forgot.vue", ()=>{
             }
         })
         expect(wrapper.findComponent(Forgot).exists()).toBe(true)
+    })
+    it ("test that the  forgot form component renders", ()=>{
+        const wrapper = mount(Forgot)
+        expect(wrapper.findComponent(ForgotForm).exists()).toBe(true)
     })
 })

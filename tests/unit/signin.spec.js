@@ -1,5 +1,6 @@
 import { shallowMount, mount } from '@vue/test-utils'
 import Signin from '@/views/Signin.vue'
+import CommonForm from '../../src/components/CommonForm.vue'
 import App from "../../src/App.vue"
 import router from '../../src/router/index.js'
 import store from '../../src/store/index.js'
@@ -27,4 +28,27 @@ describe("Signin.vue", ()=>{
         expect(wrapper.get('h1').text()).toContain("Want to see awesomeness")
 
     })
+
+    it ("test that the commonform component renders", ()=>{
+        const wrapper = mount(Signin)
+        expect(wrapper.findComponent(CommonForm).exists()).toBe(true)
+    })
+
+    it('test setting props', async () =>{
+        const wrapper = mount(CommonForm, {
+          props:{
+            header:'form header 1',
+            submit_text: 'submit',
+            bottom_text: 'already have an account',
+            bottom_link_text: 'signin',
+            route_name: 'home',
+            action: 'submitting',
+          }
+        })
+        expect(wrapper.get('h2').text()).toContain('form header 1')
+        
+        await wrapper.setProps({ header: 'form header 2' })
+    
+        expect(wrapper.get('h2').text()).toContain('form header 2')
+      })
 })

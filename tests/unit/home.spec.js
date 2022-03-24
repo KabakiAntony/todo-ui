@@ -25,7 +25,7 @@ describe("Home.vue", ()=>{
     
     it("test displaying a welcome message on the homepage", ()=>{
         const wrapper = mount(Home)
-        expect(wrapper.get('h1').text()).toEqual("Ain't this the best todo app on the internet")
+        expect(wrapper.get('h1').text()).toContain("Ain't this the best")
 
     })
     
