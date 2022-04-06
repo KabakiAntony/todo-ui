@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <Spinner />
-     <transition name="toast">
+     <Transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
-    </transition>
+    </Transition>
     <h1>Forgot your password ?</h1>
     <p>We got you, just enter your email below and we will send you a link shortly.</p>
     <div class="holder">
