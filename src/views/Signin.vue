@@ -1,9 +1,9 @@
 <template>
   <div class="page">
     <Spinner />
-     <transition name="toast">
+     <Transition name="toast">
       <ShowAlert  v-if='show' :class='type' :message='message'/>
-    </transition>
+    </Transition>
     <h1>Want to see awesomeness login down here it's so simple</h1>
     <div class="holder">
      <img alt="Todos UI Logo" class="side-img" src="../assets/images/undraw_sign_in_re_o58h.svg">

@@ -47,7 +47,7 @@ export default {
             this.action="submitting"
             this.addTodoProps.submit_text ="adding ..."
             this.loadSpinner()
-            const url = 'https://ka-todos.herokuapp.com/todos'
+            const url = `${this.$api}todos`
             const res = await fetch(url,{
                 method:'POST',
                 headers:{
@@ -73,7 +73,7 @@ export default {
         async deleteTodo(todoId){
             if(confirm('Are you sure you want to delete ?')){
                 this.loadSpinner()
-                const url = `https://ka-todos.herokuapp.com/todos/${todoId}`
+                const url = `${this.$api}todos/${todoId}`
                 const res = await fetch(url,{
                     method:'DELETE',
                     headers:{
@@ -105,7 +105,7 @@ export default {
                 user_id: todo.user_id
             }
             this.loadSpinner()
-            const url = `https://ka-todos.herokuapp.com/todos/${todoId}`
+            const url =  `${this.$api}todos/${todoId}`
             const res = await fetch(url,{
                 method:'PUT',
                 headers:{

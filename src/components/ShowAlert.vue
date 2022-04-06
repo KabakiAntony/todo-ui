@@ -1,7 +1,5 @@
 <template>
- <transition name="toast">
    <div :class="type" id="showAlert">{{ message }}</div>
- </transition>
 </template>
 
 <script> 
