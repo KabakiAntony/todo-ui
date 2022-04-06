@@ -27,9 +27,9 @@ export default {
   methods:{
     async signOut(){
       try{
-            this.$store.commit('UPDATE_IS_LOGGED_IN',false)
-            this.$store.commit('UPDATE_AUTH_TOKEN',null)
-            this.$store.commit('UPDATE_SCREEN_NAME',null)
+            this.$store.commit('SET_IS_LOGGED_IN',false)
+            this.$store.commit('SET_AUTH_TOKEN',null)
+            this.$store.commit('SET_SCREEN_NAME',null)
             this.$router.push({name:"SignIn"})
       }
       catch(err){
@@ -41,7 +41,7 @@ export default {
   computed:{
     ...mapGetters({
       isLoggedIn:"IsLoggedIn", 
-      screen_name:"ScreenName"
+      screen_name:"ScreenName",
       }),
   },  
 }
