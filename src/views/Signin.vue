@@ -13,6 +13,7 @@
 </template>
 
 <script>
+import {mapActions} from 'vuex'
 import CommonForm from "@/components/CommonForm.vue"
 import ShowAlert from "@/components/ShowAlert.vue"
 import Spinner from '@/components/Spinner.vue'
