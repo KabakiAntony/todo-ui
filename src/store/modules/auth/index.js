@@ -1,11 +1,67 @@
-import state from './state'
-import * as getters from './getters'
-import * as actions from './actions'
-import * as mutations from './mutations'
+const state = {        
+    auth_token:null,
+    isLoggedIn :false,
+    screen_name:null,
+}
 
-export default {
-    state,
-    actions,
-    getters,
-    mutations
+const getters = {
+  AuthToken (state){
+      return state.auth_token
+  },
+
+  IsLoggedIn(state){
+      return state.isLoggedIn
+  },
+
+  ScreenName(state){
+      return state.screen_name
+  }
+}
+
+const actions = {
+  async signIn ({commit}, userData){
+      try{
+          const url = 'https://ka-todos.herokuapp.com/users/signin' 
+          const res = await fetch(url,{
+          method:'POST',
+          headers:{
+              'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(userData)
+          })
+          const data = await res.json()
+          if (data.status === 200){
+              commit('SET_AUTH_TOKEN',data.data.auth_token)
+              commit('SET_SCREEN_NAME', data.data.screen_name)
+              commit('SET_IS_LOGGED_IN',true)
+          }
+          return data
+      }
+      catch(err){
+          let error = "The server is offline or unreachable."
+          return err
+      }
+    }
+}
+
+const mutations = {
+    SET_AUTH_TOKEN(state,payload){
+        state.auth_token = payload
+     },
+    
+     SET_IS_LOGGED_IN(state,payload){
+       state.isLoggedIn = payload
+     },
+    
+     SET_SCREEN_NAME(state, payload){
+       state.screen_name = payload
+     },
+}
+
+export default{
+  // namespaced: true,
+  state,
+  getters,
+  actions,
+  mutations
 }
