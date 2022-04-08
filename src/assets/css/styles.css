@@ -278,7 +278,7 @@ img{
   margin-top: 10%;
 }
 button{
-  width:50%;
+  width:20%;
   font-size: smaller;
   color: #ffffff;
   border:none;
@@ -293,10 +293,17 @@ button{
   background-color: #0096D6;
 }
 .completed{
-  background-color:#89898E;
+  background-color:#3c9b3c;
+}
+.completed::after{
+  content:"Completed"
+}
+.completed:hover::after{
+  content:"Undo ?"
+
 }
 .li-completed{
-  border:2px solid  #26bd26;
+  text-decoration-line: line-through;
   color:#26bd26;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
