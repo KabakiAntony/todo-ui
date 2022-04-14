@@ -2,7 +2,6 @@ import auth  from '../../src/store/modules/auth'
 import todos from '../../src/store/modules/todos'
 // import axios from 'axios'
 
-console.log(process.env.VUE_APP_TESTING_TOKEN)
 
 describe('auth mutations', ()=>{
     it('sets auth token',()=>{
