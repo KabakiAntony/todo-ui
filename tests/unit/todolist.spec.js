@@ -1,4 +1,4 @@
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import TodoList from '@/components/TodoList.vue'
 
 
@@ -8,8 +8,9 @@ describe("TodoList.vue", ()=>{
         const wrapper = shallowMount(TodoList)
         expect(wrapper.vm.$options.name).toMatch('TodoList')
     })
+
     it("test displaying todo passed as props", ()=>{
-        const wrapper = mount(TodoList,{
+        const wrapper = shallowMount(TodoList,{
             props:{
                 todos: [
                     {
@@ -23,9 +24,19 @@ describe("TodoList.vue", ()=>{
         const todo = wrapper.get('[data-test="todo"]')
         expect(todo.text()).toBe('Learn Vue.js 3')
     })
+
+    it("test that it does not render when there are not todos passed", ()=>{
+        const wrapper = shallowMount(TodoList,{
+            props:{
+                todos: []
+            }
+        })
+        const todo = wrapper.find('[data-test="todo"]')
+        expect(todo.exists()).toBe(false)
+    })
     
     it("test emitting update event", ()=>{
-        const wrapper = mount(TodoList,{
+        const wrapper = shallowMount(TodoList,{
             props:{
                 todos: [
                     {
@@ -42,7 +53,7 @@ describe("TodoList.vue", ()=>{
     })
 
     it("test emitting delete event", ()=>{
-        const wrapper = mount(TodoList,{
+        const wrapper = shallowMount(TodoList,{
             props:{
                 todos: [
                     {
