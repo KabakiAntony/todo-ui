@@ -1,10 +1,12 @@
 import auth  from '../../src/store/modules/auth'
 import todos from '../../src/store/modules/todos'
-import axios from 'axios'
+// import axios from 'axios'
+
+console.log(process.env.VUE_APP_TESTING_TOKEN)
 
 describe('auth mutations', ()=>{
     it('sets auth token',()=>{
-        const token = "49urjewsgniwp054wtt"
+        const token = process.env.VUE_APP_TESTING_TOKEN
                 
         const state = {
             auth_token:null,
@@ -64,12 +66,12 @@ describe('todos mutations', ()=>{
 describe('auth getters', ()=>{
     it('test getting auth token',()=>{
         const state = {
-            auth_token:"r8tyw54rnwjh54sg9r9er"
+            auth_token:process.env.VUE_APP_TESTING_TOKEN
         }
 
         const result = auth.getters.AuthToken(state)
 
-        expect(result).toEqual("r8tyw54rnwjh54sg9r9er")
+        expect(result).toEqual(process.env.VUE_APP_TESTING_TOKEN)
     })
 
     it('test getting logged in state',()=>{
