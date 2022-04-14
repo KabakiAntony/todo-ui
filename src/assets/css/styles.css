@@ -274,11 +274,11 @@ img{
   transition: all 0.3s ease;
 }
 .action-buttons{
-  margin-left: 55%;
+  margin-left: 50%;
   margin-top: 10%;
 }
 button{
-  width:50%;
+  width:47%;
   font-size: smaller;
   color: #ffffff;
   border:none;
@@ -288,15 +288,19 @@ button{
 }
 .delete{
  background-color: #f33629;
+ margin-left: 2%;
 }
 .open{
   background-color: #0096D6;
 }
 .completed{
-  background-color:#89898E;
+  background-color:#3c9b3c;
+}
+.completed::after{
+  content:"Undo"
 }
 .li-completed{
-  border:2px solid  #26bd26;
+  text-decoration-line: line-through;
   color:#26bd26;
 }
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -559,5 +563,18 @@ margin: 0 auto;
   width: 70%;
   left:15%;
   font-size: 95%;
+}
+button{
+  width:35%;
+}
+.action-buttons{
+  margin-left: 70%;
+}
+.completed::after{
+  content:"Completed"
+}
+.completed:hover::after{
+  content:"Undo?"
+
 }
 }

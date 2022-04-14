@@ -21,7 +21,7 @@ const getters = {
 const actions = {
   async signIn ({commit}, userData){
       try{
-          const url = 'https://ka-todos.herokuapp.com/users/signin' 
+          const url = `${this.$api}users/signin`
           const res = await fetch(url,{
           method:'POST',
           headers:{
