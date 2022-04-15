@@ -6,10 +6,6 @@ import Forgot from '@/views/Forgot.vue'
 import Home from '@/views/Home.vue'
 import Signin from '@/views/Signin.vue'
 import Signup from '@/views/Signup.vue'
-// import Update from '@views/Update.vue'
-// import Verify from '@views/Verify.vue'
-// import Dashboard from '@views/Dashboard.vue'
-
 
 
 describe('App.vue', ()=>{
@@ -68,12 +64,4 @@ describe('App.vue', ()=>{
         expect(wrapper.findComponent(Forgot).exists()).toBe(true)
         wrapper.unmount()
     })
-
-    // it('should render the update component',()=>{
-
-    // })
-
-    // // it('should render the dashboard component',()=>{
-
-    // // })
 })
