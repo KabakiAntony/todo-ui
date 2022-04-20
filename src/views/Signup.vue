@@ -40,7 +40,7 @@ export default {
     loadToast,
      async handleSubmit(theForm){
             this.action="submitting"
-            this.commonFormProps.submit_text ="Signing up ..."
+            this.commonFormProps.submit_text =" "
             this.loadSpinner()
             const url = `${this.$api}users/signup`
             const res = await fetch(url,{

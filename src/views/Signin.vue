@@ -45,7 +45,7 @@ export default {
     loadToast,
      async handleSubmit(theForm){
             this.action="submitting"
-            this.commonFormProps.submit_text ="Signing in ..."
+            this.commonFormProps.submit_text =""
             this.loadSpinner()
             try{
               let data = await this.$store.dispatch('signIn',theForm)

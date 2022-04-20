@@ -50,7 +50,7 @@ export default {
     loadToast,
     async handleSubmit(){
           this.action="submitting"
-          this.submit_text ="Updating ..."
+          this.submit_text =" "
           const theForm = {
             email: this.email,
             password: this.password

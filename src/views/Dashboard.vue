@@ -45,7 +45,7 @@ export default {
         loadToast,
         async addTodo(theForm){
             this.action="submitting"
-            this.addTodoProps.submit_text ="adding ..."
+            this.addTodoProps.submit_text =""
             this.loadSpinner()
             const url = `${this.$api}todos`
             const res = await fetch(url,{

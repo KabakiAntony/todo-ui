@@ -40,7 +40,7 @@ export default {
     loadToast,
      async handleSubmit(theForm){
             this.action="submitting"
-            this.forgotFormProps.submit_text ="Sending email ..."
+            this.forgotFormProps.submit_text =" "
             this.loadSpinner()
             try{
               const url = `${this.$api}users/forgot`
