@@ -38,8 +38,8 @@ const actions = {
           return data
       }
       catch(err){
-          let error = "The server is offline or unreachable."
-          return err
+          let error = "Seems like you are offline kindly check your connection."
+          return error
       }
     }
 }
